@@ -179,3 +179,12 @@ body {
     font-size: 18px;
     line-height: 1.6;
 }
+
+h1 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+.layout {
+    contain: layout style;
+}
