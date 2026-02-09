@@ -180,11 +180,11 @@ body {
     line-height: 1.6;
 }
 
+.layout {
+    contain: layout style;
+}
+
 h1 {
     font-size: 24px;
     margin: 0 0 10px 0;
-}
-
-.layout {
-    contain: layout style;
 }
