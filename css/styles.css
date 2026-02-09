@@ -15,15 +15,14 @@ body {
 }
 
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 240px;
-    height: 100vh;
-    background: #121A2B;
+    width: 260px;
+    background: rgba(10, 15, 30, 0.85);
+    backdrop-filter: blur(8px);
     padding: 30px 20px;
-    box-sizing: border-box;
-    box-shadow: 4px 0 25px rgba(79, 182, 255, 0.15);
+    border-right: 2px solid #D4AF37;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -55,10 +54,6 @@ body {
     color: #D4AF37;
 }
 
-.main-content {
-    margin-left: 240px;
-    padding: 60px;
-}
 
 .sidebar a.active {
     color: #D4AF37;
@@ -108,7 +103,7 @@ body {
         display: none;
     }
 
-    .main-content {
+    .content {
         margin-left: 70px;
         padding: 30px;
     }
@@ -131,18 +126,6 @@ body {
 .layout {
     display: flex;
     min-height: 100vh;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 260px;
-    background: rgba(10, 15, 30, 0.85);
-    backdrop-filter: blur(8px);
-    padding: 30px 20px;
-    border-right: 2px solid #D4AF37;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 /* Logo Area */
@@ -180,8 +163,9 @@ body {
 
 /* Main Content */
 .content {
-    flex: 1;
+    margin-left: 0; 
     padding: 60px;
+    flex: 1; 
     background: rgba(10, 15, 30, 0.6);
 }
 
