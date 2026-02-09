@@ -188,3 +188,85 @@ body {
     font-size: 24px;
     margin: 0 0 10px 0;
 }
+
+.hero {
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+.cover-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(79, 182, 255, 0.5);
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #D4AF37;
+  position: absolute;
+  bottom: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+}
+.display-name {
+  margin-top: 80px;
+  font-size: 36px;
+  color: #4FB6FF;
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+.summary {
+  font-size: 20px;
+  margin: 20px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+.icon-item img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.icon-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.modal-content {
+  background: rgba(18, 26, 43, 0.95);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #D4AF37;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+}
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .avatar { width: 120px; height: 120px; }
+  .social-icons { flex-wrap: wrap; gap: 15px; }
+}
