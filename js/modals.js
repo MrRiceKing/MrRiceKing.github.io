@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Modal data for homepage
   const modalData = {
-    discord: { username: "@MrRiceKing", desc: "Join my community for gaming and art discussions.", link: "https://discord.gg/yourlink" },
-    snapchat: { username: "MrRiceKing", desc: "Snapchat for quick updates and behind-the-scenes.", link: "https://snapchat.com/add/MrRiceKing" },
-    steam: { username: "MrRiceKing", desc: "My Steam profile for game recommendations.", link: "https://steamcommunity.com/id/MrRiceKing" },
-    paypal: { username: "paypal@mrriccking.com", desc: "Support my work via PayPal.", link: "https://paypal.me/TheRiceKingdom" }
+    discord: { username: "@mr.riceking", desc: "Join my community for gaming and art discussions.", link: "https://discord.gg/59fvxyjfKD" },
+    snapchat: { username: "MrRiceKing", desc: "Snapchat for quick updates and behind-the-scenes.", link: "https://snapchat.com/add/MrRiceKing-aj" },
+    steam: { username: "MrRiceKing", desc: "Add my Steam profile to game with me!", link: "https://steamcommunity.com/id/MrRiceKing" },
+    paypal: { username: "@TheRiceKingdom", desc: "Support my work via PayPal.", link: "https://paypal.me/TheRiceKingdom" }
   };
 
   document.querySelectorAll("[data-modal]").forEach(item => {
@@ -29,3 +29,4 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn.addEventListener("click", () => modal.style.display = "none");
   window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
 });
+

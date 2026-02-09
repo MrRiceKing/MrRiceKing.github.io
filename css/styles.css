@@ -196,25 +196,25 @@ body {
 }
 .cover-photo {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(79, 182, 255, 0.5);
 }
 .avatar {
-  width: 150px;
-  height: 150px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
-  border: 5px solid #D4AF37;
+  border: 2px solid #D4AF37;
   position: absolute;
-  bottom: -75px;
+  bottom: 235px;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
 }
 .display-name {
   margin-top: 80px;
-  font-size: 36px;
+  font-size: 42px;
   color: #4FB6FF;
   text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
 }

@@ -40,13 +40,56 @@
     <!-- Main Content -->
     <main class="content">
       <section class="page-section">
-        <h2>Welcome</h2>
-        <p>This is the beginning of something legendary.</p>
+        <h2>Gamer Profile</h2>
+        <p>Explore my gaming world, from platforms to favorites.</p>
+        <div class="social-icons">
+          <!-- Same as homepage, but for platforms -->
+          <div class="icon-item" data-modal="steam">
+            <img src="assets/icons/steam.png" alt="Steam">
+          </div>
+          <!-- Add Xbox, Battle.net, Epic -->
+        </div>
+        <div class="filters">
+          <select id="category">
+            <option value="all">All Genres</option>
+            <option value="rpg">RPG</option>
+            <option value="fps">FPS</option>
+            <option value="sandbox">Sandbox</option>
+            <option value="moba">MOBA</option>
+            <option value="mmorpg">MMORPG</option>
+          </select>
+          <select id="sort">
+            <option value="rating">Sort by Rating</option>
+            <option value="time">Sort by Playtime</option>
+            <option value="age">Sort by Release Age</option>
+          </select>
+        </div>
+        <div class="grid" id="games">
+          <div class="card" data-category="rpg" data-rating="9" data-time="100">
+            <img src="assets/images/game1.jpg" alt="Game 1">
+            <h3>The Witcher 3</h3>
+            <button onclick="openGameModal('witcher')">Details</button>
+          </div>
+          <div class="card" data-category="sandbox" data-rating="9" data-time="100">
+            <img src="assets/images/gmod.jpg" alt="Game 2">
+            <h3>Garry's Mod</h3>
+            <button onclick="openGameModal('gmod')">Details</button>
+          </div>
+          <!-- Add more games -->
+        </div>
       </section>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="modal-body"></div>
+        </div>
+      </div>
     </main>
 
   </div>
 
+    <script src="js/modals.js"></script>
+    <script src="js/games.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
     <script src="js/vanta-init.js"></script>
