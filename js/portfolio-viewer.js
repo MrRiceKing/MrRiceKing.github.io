@@ -40,7 +40,6 @@ function displayPortfolioModal() {
   
   const mediaElement = media.type === "image" 
     ? `<img src="${media.src}" alt="${media.alt}" class="modal-media">`
-      `<audio src="${media.src}" controls class="modal-media"></audio>`
     : `<video src="${media.src}" controls class="modal-media"></video>`;
   
   document.getElementById("modal-media").innerHTML = mediaElement;
