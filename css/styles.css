@@ -269,6 +269,7 @@ body {
 @media (max-width: 768px) {
   .avatar { width: 120px; height: 120px; }
   .social-icons { flex-wrap: wrap; gap: 15px; }
+  .grid { grid-template-columns: 1fr; }
 }
 
 .grid {
@@ -294,6 +295,4 @@ body {
 .card small {
   color: #7FDFFF;
 }
-@media (max-width: 768px) {
-  .grid { grid-template-columns: 1fr; }
-}
+
