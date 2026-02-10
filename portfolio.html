@@ -8,6 +8,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -40,13 +41,29 @@
     <!-- Main Content -->
     <main class="content">
       <section class="page-section">
-        <h2>Welcome</h2>
-        <p>This is the beginning of something legendary.</p>
+        <h2>Art Portfolio</h2>
+        <p>Explore my creations—click to view in fullscreen.</p>
+        <div class="grid" id="portfolio">
+          <div class="card" data-lightbox="art" data-title="Digital Portrait" data-desc="A fantasy character study." data-time="2023-10-15">
+            <img src="assets/images/art1.jpg" alt="Art 1">
+            <h3>Digital Portrait</h3>
+            <p>A fantasy character study.</p>
+            <small>Created: 2023-10-15</small>
+          </div>
+          <div class="card" data-lightbox="art" data-title="Concept Art" data-desc="Sci-fi landscape." data-time="2023-11-20">
+            <img src="assets/images/art2.jpg" alt="Art 2">
+            <h3>Concept Art</h3>
+            <p>Sci-fi landscape.</p>
+            <small>Created: 2023-11-20</small>
+          </div>
+          <!-- Add more art -->
+        </div>
       </section>
-    </main>
+</main>
 
   </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
     <script src="js/vanta-init.js"></script>
