@@ -7,7 +7,9 @@ const portfolioData = [
     date: "2023-10-15",
     media: [
       { type: "image", src: "assets/images/Celestial-Trivar.png", alt: "Celestial Trivar" },
-      { type: "image", src: "assets/images/alt-art-1.jpg", alt: "Alternative angle" }
+      { type: "image", src: "assets/images/Ascending-Trivar.png", alt: "Ascending Trivar" },
+      { type: "video", src: "assets/videos/Trivar-Process.mp4", alt: "Trivar Process" },
+      { type: "audio", src: "assets/audio/Trivar-Theme.mp3", alt: "Trivar Theme" }
     ]
   },
   {
@@ -38,6 +40,7 @@ function displayPortfolioModal() {
   
   const mediaElement = media.type === "image" 
     ? `<img src="${media.src}" alt="${media.alt}" class="modal-media">`
+      `<audio src="${media.src}" controls class="modal-media"></audio>`
     : `<video src="${media.src}" controls class="modal-media"></video>`;
   
   document.getElementById("modal-media").innerHTML = mediaElement;
