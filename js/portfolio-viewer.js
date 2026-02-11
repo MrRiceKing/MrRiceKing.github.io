@@ -8,8 +8,7 @@ const portfolioData = [
     media: [
       { type: "image", src: "assets/images/Celestial-Trivar.png", alt: "Celestial Trivar" },
       { type: "image", src: "assets/images/Ascending-Trivar.png", alt: "Ascending Trivar" },
-      { type: "video", src: "assets/videos/Trivar-Process.mp4", alt: "Trivar Process" },
-      { type: "audio", src: "assets/audio/Trivar-Theme.mp3", alt: "Trivar Theme" }
+      { type: "video", src: "assets/videos/Alien-Artifact.mp4", alt: "Alien Artifact" },
     ]
   },
   {

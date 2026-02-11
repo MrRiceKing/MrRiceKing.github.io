@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mr. RiceKing</title>
+    <title>Mr. RiceKing - Projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
@@ -41,35 +41,91 @@
     <main class="content">
       <section class="page-section">
         <h2>Current Projects</h2>
-        <p>Preview my ongoing projects and goals.</p>
-        <div class="grid">
-          <div class="card">
-            <img src="assets/icons/high.png" alt="High Priority" class="priority-high">
-            <h3>Game Development</h3>
-            <p>Building an indie RPG.</p>
-            <button onclick="openModal('project1')">Details</button>
-          </div>
-          <div class="card">
-            <img src="assets/icons/med.png" alt="Medium Priority" class="priority-med">
-            <h3>Art Commission</h3>
-            <p>Custom digital portrait.</p>
-            <button onclick="openModal('project2')">Details</button>
-          </div>
-          <!-- Add more -->
+        <p>Sneak peek at my ongoing work across gaming, art, and tech.</p>
+        
+        <div class="priority-filters">
+          <button class="filter-btn active" onclick="filterByPriority('all')">All Projects</button>
+          <button class="filter-btn" onclick="filterByPriority('high')">High Priority</button>
+          <button class="filter-btn" onclick="filterByPriority('medium')">Medium Priority</button>
+          <button class="filter-btn" onclick="filterByPriority('low')">Low Priority</button>
+        </div>
+
+        <div class="grid" id="projects">
+          <!-- Dynamically generated from projects-viewer.js -->
         </div>
       </section>
-      <div id="modal" class="modal">
-        <div class="modal-content"></div>
-      </div>
     </main>
 
+  </div>
+
+  <!-- Projects Modal -->
+  <div id="projects-modal" class="projects-modal">
+    <div class="projects-modal-content">
+      <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+      <div class="modal-project-left">
+        <div id="modal-project-cover"></div>
+      </div>
+      <div class="modal-project-right">
+        <div class="priority-badge" id="modal-project-priority">HIGH</div>
+        <h2 id="modal-project-title">Project Title</h2>
+        <p id="modal-project-description">Description</p>
+        <p id="modal-project-status">Status: </p>
+        <a id="modal-project-link" href="#" target="_blank" class="btn-link">View Project</a>
+      </div>
+      <div class="project-nav">
+        <button onclick="prevProject()" class="nav-btn-vertical">&#x25B2;</button>
+        <button onclick="nextProject()" class="nav-btn-vertical">&#x25BC;</button>
+      </div>
+    </div>
   </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
     <script src="js/vanta-init.js"></script>
+    <script src="js/projects-viewer.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/modals.js"></script>
+    <script>
+      // Generate projects grid from data
+      let filteredProjects = [...projectsData];
+
+      function renderProjects() {
+        const grid = document.getElementById("projects");
+        grid.innerHTML = "";
+        
+        filteredProjects.forEach(project => {
+          const priorityColor = project.priority === "high" ? "#FF6B6B" : 
+                                project.priority === "medium" ? "#FFA500" : "#4FB6FF";
+          const card = document.createElement("div");
+          card.className = "card project-card";
+          card.onclick = () => openProjectModal(project.id);
+          card.innerHTML = `
+            <div class="card-priority" style="background-color: ${priorityColor};">${project.priority.toUpperCase()}</div>
+            <img src="${project.cover}" alt="${project.title}">
+            <h3>${project.title}</h3>
+            <p>${project.description.substring(0, 70)}...</p>
+            <small>${project.status}</small>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      function filterByPriority(priority) {
+        // Update active button
+        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+        event.target.classList.add("active");
+        
+        // Filter projects
+        if (priority === "all") {
+          filteredProjects = [...projectsData];
+        } else {
+          filteredProjects = projectsData.filter(p => p.priority === priority);
+        }
+        renderProjects();
+      }
+
+      // Initialize on load
+      document.addEventListener("DOMContentLoaded", renderProjects);
+    </script>
 
 </body>
 </html>

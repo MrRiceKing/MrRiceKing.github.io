@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mr. RiceKing</title>
+    <title>Mr. RiceKing - Resources</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
@@ -41,26 +41,22 @@
     <main class="content">
       <section class="page-section">
         <h2>Resources</h2>
-        <p>Useful tools and content recommendations.</p>
-        <div class="filters">
+        <p>Tools, tutorials, and resources I recommend for creators and developers.</p>
+        
+        <div class="resource-filters">
           <select id="category">
             <option value="all">All Categories</option>
             <option value="tools">Tools</option>
             <option value="tutorials">Tutorials</option>
           </select>
           <select id="sort">
-            <option value="time">Sort by Time</option>
+            <option value="time">Sort by Newest</option>
             <option value="rating">Sort by Rating</option>
           </select>
         </div>
+
         <div class="grid" id="resources">
-          <div class="card" data-category="tools" data-rating="5" data-time="2023-12-01">
-            <h3>Blender</h3>
-            <p>3D modeling software.</p>
-            <p>Rating: ★★★★★</p>
-            <small>Posted: 2023-12-01</small>
-          </div>
-          <!-- Add more -->
+          <!-- Dynamically generated from resources-manager.js -->
         </div>
       </section>
     </main>
@@ -70,8 +66,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
     <script src="js/vanta-init.js"></script>
+    <script src="js/resources-manager.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/modals.js"></script>
 
 </body>
 </html>

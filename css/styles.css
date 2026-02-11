@@ -351,6 +351,7 @@ body {
 .modal-media-container {
   width: 100%;
   height: 500px;
+  
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(79, 182, 255, 0.4);
@@ -486,5 +487,349 @@ body {
   
   .modal-media-container {
     height: 300px;
+  }
+}
+
+/* Projects Filters */
+.priority-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(79, 182, 255, 0.2);
+  border: 1px solid #4FB6FF;
+  color: #4FB6FF;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #4FB6FF;
+  color: #0B1120;
+  box-shadow: 0 0 15px rgba(79, 182, 255, 0.5);
+}
+
+/* Project Cards */
+.project-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.card-priority {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Projects Modal */
+.projects-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.projects-modal-content {
+  background: rgba(18, 26, 43, 0.95);
+  border: 2px solid #D4AF37;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1000px;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+}
+
+.modal-project-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-project-right {
+  padding: 20px;
+  border-left: 1px solid #D4AF37;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  width: fit-content;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.modal-project-right h2 {
+  color: #D4AF37;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.modal-project-right p {
+  color: #E6F1FF;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.modal-project-right small {
+  color: #7FDFFF;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.btn-link {
+  display: inline-block;
+  background: #4FB6FF;
+  color: #0B1120;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.btn-link:hover {
+  background: #D4AF37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+}
+
+.project-nav {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .projects-modal-content {
+    grid-template-columns: 1fr;
+    height: 90vh;
+  }
+
+  .modal-project-left {
+    order: 1;
+  }
+
+  .modal-project-right {
+    order: 2;
+    border-left: none;
+    border-top: 1px solid #D4AF37;
+  }
+
+  .project-nav {
+    bottom: 15px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    top: auto;
+  }
+
+  .priority-filters {
+    justify-content: center;
+  }
+}
+
+/* Resources Filters */
+.resource-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.resource-filters select {
+  background: rgba(79, 182, 255, 0.2);
+  border: 1px solid #4FB6FF;
+  color: #E6F1FF;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.resource-filters select:hover,
+.resource-filters select:focus {
+  background: rgba(79, 182, 255, 0.4);
+  box-shadow: 0 0 10px rgba(79, 182, 255, 0.5);
+}
+
+/* Resource Cards */
+.resource-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.rating {
+  color: #FFA500;
+  letter-spacing: 2px;
+}
+
+.date {
+  color: #7FDFFF;
+  font-size: 12px;
+}
+
+.btn-link {
+  background: #4FB6FF;
+  color: #0B1120;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.btn-link:hover {
+  background: #D4AF37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+
+/* Discord Intro */
+.discord-intro {
+  background: rgba(88, 101, 242, 0.15);
+  border: 2px solid #5865F2;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.discord-intro h3 {
+  color: #5865F2;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.discord-intro p {
+  color: #E6F1FF;
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.discord-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #5865F2;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.discord-btn:hover {
+  background: #4752C4;
+  box-shadow: 0 0 20px rgba(88, 101, 242, 0.6);
+  transform: translateY(-3px);
+}
+
+.discord-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Contact Icons */
+.contact-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-item img {
+  width: 80px;
+  height: 80px;
+  transition: all 0.3s;
+}
+
+.contact-item:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+}
+
+.contact-item p {
+  color: #E6F1FF;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .discord-intro {
+    padding: 20px;
+  }
+
+  .contact-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .contact-item img {
+    width: 60px;
+    height: 60px;
   }
 }
