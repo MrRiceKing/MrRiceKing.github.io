@@ -351,10 +351,12 @@ body {
 .modal-media-container {
   width: 100%;
   height: 500px;
-  
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(79, 182, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-media {
@@ -831,5 +833,284 @@ body {
   .contact-item img {
     width: 60px;
     height: 60px;
+  }
+}
+
+/* ===== MODAL IMAGE SCALING FIX ===== */
+/* Apply to all modal media containers */
+.modal-media-container,
+#modal-game-cover,
+#modal-project-cover {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-media,
+#modal-game-cover img,
+#modal-project-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 500px;
+}
+
+video.modal-media {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===== GAMES MODAL STYLES ===== */
+.games-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.games-modal-content {
+  background: rgba(18, 26, 43, 0.95);
+  border: 2px solid #D4AF37;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1000px;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+}
+
+.modal-game-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-game-cover {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+}
+
+.modal-game-right {
+  padding: 20px;
+  border-left: 1px solid #D4AF37;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-game-right h2 {
+  color: #D4AF37;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.modal-game-right h2 a {
+  color: #D4AF37;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.modal-game-right h2 a:hover {
+  color: #4FB6FF;
+  text-shadow: 0 0 10px rgba(79, 182, 255, 0.7);
+}
+
+.modal-game-right p {
+  color: #E6F1FF;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.game-stats {
+  background: rgba(79, 182, 255, 0.1);
+  border-left: 2px solid #4FB6FF;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.game-stats p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+#modal-game-rating {
+  color: #FFA500;
+  letter-spacing: 2px;
+}
+
+.game-nav {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== GAME CARD STYLES ===== */
+.tag-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.game-card {
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+.card-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.platform-section {
+  margin-bottom: 40px;
+}
+
+.platform-section h3 {
+  color: #4FB6FF;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.platform-section .social-icons {
+  justify-content: flex-start;
+}
+
+.platform-section .icon-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.platform-section .icon-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.platform-section .icon-item p {
+  color: #E6F1FF;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .games-modal-content {
+    grid-template-columns: 1fr;
+    height: 90vh;
+  }
+
+  .modal-game-left {
+    order: 1;
+  }
+
+  .modal-game-right {
+    order: 2;
+    border-left: none;
+    border-top: 1px solid #D4AF37;
+    max-height: 200px;
+  }
+
+  .game-nav {
+    bottom: 15px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    top: auto;
+  }
+
+  .tag-filters {
+    justify-content: center;
+  }
+
+  .platform-section .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ===== RESPONSIVE POLISH ===== */
+@media (max-width: 1024px) {
+  .portfolio-modal-content,
+  .projects-modal-content,
+  .games-modal-content {
+    max-width: 90vw;
+    height: 75vh;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-content,
+  .portfolio-modal-content,
+  .projects-modal-content,
+  .games-modal-content {
+    width: 95vw !important;
+    height: 85vh !important;
+    padding: 15px !important;
+  }
+
+  .modal-left,
+  .modal-project-left,
+  .modal-game-left {
+    min-height: 300px;
+  }
+
+  .modal-media-container,
+  #modal-project-cover,
+  #modal-game-cover {
+    max-height: 350px;
+  }
+
+  .modal-right,
+  .modal-project-right,
+  .modal-game-right {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .modal-right h2,
+  .modal-project-right h2,
+  .modal-game-right h2 {
+    font-size: 20px;
+  }
+
+  .nav-btn,
+  .nav-btn-vertical {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
   }
 }
