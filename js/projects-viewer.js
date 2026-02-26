@@ -44,6 +44,15 @@ const projectsData = [
     cover: "assets/images/project-web.jpg",
     link: "https://github.com/yourrepo/portfolio",
     status: "In Development"
+  },
+  {
+    id: 6,
+    title: "Animation Portfolio",
+    description: "Showcase of character animations, visual effects, and motion design work created in Blender and game engines.",
+    priority: "low",
+    cover: "assets/images/project-animation.jpg",
+    link: "",
+    status: "Concept Phase"
   }
 ];
 

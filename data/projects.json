@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Indie Game RPG",
+    "description": "A turn-based RPG with deep character customization, branching narratives, and a unique magic system. Set in a fantasy world inspired by Celtic mythology.",
+    "priority": "high",
+    "cover": "assets/images/project-game.jpg",
+    "link": "https://github.com/yourrepo/game-rpg",
+    "status": "In Development - 40% Complete",
+    "tags": ["Game Development", "RPG", "Unity"]
+  },
+  {
+    "id": 2,
+    "title": "Digital Art Series",
+    "description": "A collection of interconnected digital paintings exploring themes of identity and transformation through fantasy character studies.",
+    "priority": "high",
+    "cover": "assets/images/project-art.jpg",
+    "link": "",
+    "status": "Ongoing",
+    "tags": ["Digital Art", "Character Design"]
+  },
+  {
+    "id": 3,
+    "title": "Community Discord Bot",
+    "description": "A custom Discord bot with moderation tools, game utilities, and interactive features for my gaming community.",
+    "priority": "medium",
+    "cover": "assets/images/project-bot.jpg",
+    "link": "https://github.com/yourrepo/discord-bot",
+    "status": "In Development - 60% Complete",
+    "tags": ["Discord", "Python", "Bot Development"]
+  },
+  {
+    "id": 4,
+    "title": "Texture Pack Creation",
+    "description": "Custom texture packs for various games, blending realistic and fantasy aesthetics with high fidelity detail work.",
+    "priority": "medium",
+    "cover": "assets/images/project-textures.jpg",
+    "link": "",
+    "status": "Planning Phase",
+    "tags": ["3D Art", "Textures", "Game Assets"]
+  },
+  {
+    "id": 5,
+    "title": "Portfolio Website Expansion",
+    "description": "Adding advanced features to this website including project showcases, blog section, and commission booking system.",
+    "priority": "low",
+    "cover": "assets/images/project-web.jpg",
+    "link": "https://github.com/yourrepo/portfolio",
+    "status": "In Development",
+    "tags": ["Web Development", "Frontend"]
+  },
+  {
+    "id": 6,
+    "title": "Animation Portfolio",
+    "description": "Showcase of character animations, visual effects, and motion design work created in Blender and game engines.",
+    "priority": "low",
+    "cover": "assets/images/project-animation.jpg",
+    "link": "",
+    "status": "Concept Phase",
+    "tags": ["Animation", "VFX", "Blender"]
+  }
+]

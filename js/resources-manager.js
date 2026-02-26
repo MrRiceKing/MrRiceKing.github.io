@@ -5,7 +5,9 @@ const resourcesData = [
   { id: 3, title: "Procreate", description: "Digital painting app for iPad. Intuitive and feature-rich for character design.", category: "tools", rating: 4, date: "2023-10-20", link: "https://procreate.art" },
   { id: 4, title: "Game Dev Complete Course", description: "Comprehensive video course covering game design, development, and publishing.", category: "tutorials", rating: 5, date: "2023-09-10", link: "https://www.udemy.com" },
   { id: 5, title: "Fantasy Worldbuilding Guide", description: "Deep dive into creating believable fantasy worlds with culture, geography, and history.", category: "tutorials", rating: 4, date: "2023-08-05", link: "https://example.com" },
-  { id: 6, title: "Digital Art Fundamentals", description: "Learn the basics of digital art from color theory to composition.", category: "tutorials", rating: 4, date: "2023-07-22", link: "https://example.com" }
+  { id: 6, title: "Digital Art Fundamentals", description: "Learn the basics of digital art from color theory to composition.", category: "tutorials", rating: 4, date: "2023-07-22", link: "https://example.com" },
+  { id: 7, title: "Three.js Documentation", description: "Comprehensive docs and examples for Three.js 3D JavaScript library. Essential for web-based 3D graphics and interactive experiences.", category: "tools", rating: 5, date: "2023-06-15", link: "https://threejs.org" },
+  { id: 8, title: "Character Animation Masterclass", description: "Advanced techniques for bringing characters to life through keyframe animation, rigging, and motion capture interpretation.", category: "tutorials", rating: 4, date: "2023-05-30", link: "https://www.youtube.com" }
 ];
 
 let currentCategory = "all";
@@ -64,4 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   renderResources();
+});
+
+async function loadData(filename) {
+  const response = await fetch(`data/${filename}.json`);
+  return await response.json();
+}
+
+// Then in your viewers:
+let projectsData = [];
+document.addEventListener("DOMContentLoaded", async () => {
+  projectsData = await loadData("projects");
+  renderProjects();
 });

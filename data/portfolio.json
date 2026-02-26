@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Celestial Trivar",
+    "description": "A fantasy character portrait study with ethereal lighting and intricate magical details. Explores celestial themes and divine craftsmanship.",
+    "date": "2023-10-15",
+    "thumb": "assets/images/Celestial-Trivar.png",
+    "src": "assets/images/Celestial-Trivar.png",
+    "alt": "Celestial Trivar Portrait"
+  },
+  {
+    "id": 2,
+    "title": "Ascending Trivar",
+    "description": "A dynamic character composition showing transformation and ascension. Features dramatic lighting and flowing ethereal elements.",
+    "date": "2023-10-18",
+    "thumb": "assets/images/Ascending-Trivar.png",
+    "src": "assets/images/Ascending-Trivar.png",
+    "alt": "Ascending Trivar Character"
+  },
+  {
+    "id": 3,
+    "title": "Crown of Trivar",
+    "description": "A detailed concept art piece featuring ornate mystical jewelry and regalia. Showcases intricate linework and fantasy design elements.",
+    "date": "2023-11-20",
+    "thumb": "assets/images/Crown-of-Trivar.png",
+    "src": "assets/images/Crown-of-Trivar.png",
+    "alt": "Crown of Trivar Concept Art"
+  }
+]

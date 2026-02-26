@@ -1,0 +1,62 @@
+[
+  {
+    "id": "discord",
+    "name": "Discord",
+    "displayName": "Mr. RiceKing",
+    "username": "@mr.riceking",
+    "description": "Join my community for gaming and art discussions. Share your creations, find collaborators, and connect with fellow artists and gamers.",
+    "link": "https://discord.gg/59fvxyjfKD",
+    "icon": "assets/icons/discord.png",
+    "color": "#5865F2"
+  },
+  {
+    "id": "steam",
+    "name": "Steam",
+    "displayName": "Mr. RiceKing",
+    "username": "MrRiceKing",
+    "description": "Add my Steam profile to see my game library, achievements, and playtime. Let's game together and share recommendations.",
+    "link": "https://steamcommunity.com/id/MrRiceKing",
+    "icon": "assets/icons/steam.png",
+    "color": "#1B2838"
+  },
+  {
+    "id": "twitter",
+    "name": "Twitter",
+    "displayName": "Mr. RiceKing",
+    "username": "@MrRiceKing",
+    "description": "Follow for daily art updates, game streams, and creative process insights. Retweets of inspiring art and gaming content too.",
+    "link": "https://twitter.com/MrRiceKing",
+    "icon": "assets/icons/twitter.png",
+    "color": "#1DA1F2"
+  },
+  {
+    "id": "instagram",
+    "name": "Instagram",
+    "displayName": "Mr. RiceKing",
+    "username": "@mrriceking",
+    "description": "Gallery of finished art, character designs, and behind-the-scenes content. Follow for visual storytelling and creative inspiration.",
+    "link": "https://instagram.com/mrriceking",
+    "icon": "assets/icons/instagram.png",
+    "color": "#E4405F"
+  },
+  {
+    "id": "youtube",
+    "name": "YouTube",
+    "displayName": "Mr. RiceKing",
+    "username": "@MrRiceKing",
+    "description": "Subscribe for gameplay videos, art tutorials, and live streams. See full projects and creative processes from concept to completion.",
+    "link": "https://youtube.com/@MrRiceKing",
+    "icon": "assets/icons/youtube.png",
+    "color": "#FF0000"
+  },
+  {
+    "id": "paypal",
+    "name": "PayPal",
+    "displayName": "Support my Work",
+    "username": "@TheRiceKingdom",
+    "description": "Support my creative endeavors through PayPal donations. Every contribution helps fund new projects and resources.",
+    "link": "https://paypal.me/TheRiceKingdom",
+    "icon": "assets/icons/paypal.png",
+    "color": "#003087"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "Elden Ring",
+    "cover": "assets/images/game-elden-ring.jpg",
+    "username": "MrRiceKing",
+    "link": "https://steamcommunity.com/id/MrRiceKing",
+    "hours": 287,
+    "rating": 9,
+    "playstyle": "Challenging Adventure",
+    "tags": ["Action RPG", "Open World"]
+  },
+  {
+    "id": 2,
+    "title": "Baldur's Gate 3",
+    "cover": "assets/images/game-bg3.jpg",
+    "username": "MrRiceKing",
+    "link": "https://steamcommunity.com/id/MrRiceKing",
+    "hours": 456,
+    "rating": 10,
+    "playstyle": "Collaborative Storytelling",
+    "tags": ["RPG", "Turn-based"]
+  },
+  {
+    "id": 3,
+    "title": "Hollow Knight",
+    "cover": "assets/images/game-hollow-knight.jpg",
+    "username": "MrRiceKing",
+    "link": "https://steamcommunity.com/id/MrRiceKing",
+    "hours": 142,
+    "rating": 8,
+    "playstyle": "Pixel Art Mastery",
+    "tags": ["Metroidvania", "Indie"]
+  },
+  {
+    "id": 4,
+    "title": "Stardew Valley",
+    "cover": "assets/images/game-stardew.jpg",
+    "username": "MrRiceKing",
+    "link": "https://steamcommunity.com/id/MrRiceKing",
+    "hours": 523,
+    "rating": 9,
+    "playstyle": "Relaxing Simulation",
+    "tags": ["Simulation", "Cozy"]
+  },
+  {
+    "id": 5,
+    "title": "The Witcher 3",
+    "cover": "assets/images/game-witcher.jpg",
+    "username": "MrRiceKing",
+    "link": "https://steamcommunity.com/id/MrRiceKing",
+    "hours": 198,
+    "rating": 9,
+    "playstyle": "Story-driven Adventure",
+    "tags": ["Action RPG", "Fantasy"]
+  }
+]
