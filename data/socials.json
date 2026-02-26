@@ -17,7 +17,47 @@
     "description": "Add my Steam profile to see my game library, achievements, and playtime. Let's game together and share recommendations.",
     "link": "https://steamcommunity.com/id/MrRiceKing",
     "icon": "assets/icons/steam.png",
-    "color": "#1B2838"
+    "color": "#249ACB"
+  },
+  {
+    "id": "epicgames",
+    "name": "Epic Games",
+    "displayName": "Let's Squad Up!",
+    "username": "Epic: MrRiceKing",
+    "description": "Join me on Epic Games for Fortnite, Valorant, and other titles. We can team up for squad-based adventures and competitive play.",
+    "link": "https://www.epicgames.com/id/MrRiceKing",
+    "icon": "assets/icons/epicgames.png",
+    "color": "#D4AF37"
+  },
+  {
+    "id": "riotgames",
+    "name": "Riot Games",
+    "displayName": "Summoner's Call!",
+    "username": "Summoner: MrRiceKing#NA1",
+    "description": "League of Legends enthusiast! Check out my rank, champion pool, and match history. Let's climb the ranked ladder together.",
+    "link": "https://www.leagueoflegends.com/en-us/",
+    "icon": "assets/icons/riotgames.png",
+    "color": "#D32F2F"
+  },
+  {
+    "id": "ubisoft",
+    "name": "Ubisoft",
+    "displayName": "Adventure Awaits!",
+    "username": "Ubisoft: MrRiceKing",
+    "description": "Playing Assassin's Creed, Rainbow Six, and more. Connect with me on Ubisoft+ for epic multiplayer sessions and story-driven adventures.",
+    "link": "https://ubisoft.com/",
+    "icon": "assets/icons/ubisoft.png",
+    "color": "#31C4F3"
+  },
+  {
+    "id": "battlenet",
+    "name": "Battle.net",
+    "displayName": "For the Horde!",
+    "username": "BattleTag: MrRiceKing#1234",
+    "description": "World of Warcraft, Overwatch 2, Diablo, and Starcraft player. Join my guild or group up for dungeons, raids, and competitive matches.",
+    "link": "https://www.blizzard.com/en-us/",
+    "icon": "assets/icons/battlenet.png",
+    "color": "#BC99F8"
   },
   {
     "id": "snapchat",
@@ -27,7 +67,7 @@
     "description": "Follow for daily art updates, game streams, and creative process insights. Showcases of inspiring art and gaming content too.",
     "link": "https://snapchat.com/add/MrRiceKing-aj",
     "icon": "assets/icons/snapchat.png",
-    "color": "#1DA1F2"
+    "color": "#FFFC00"
   },
   {
     "id": "instagram",
