@@ -1,57 +1,105 @@
-// Portfolio data structure - each item can have multiple media files
-const portfolioData = [
-  {
-    id: 1,
-    title: "Digital Portrait",
-    description: "A fantasy character study with intricate details and ethereal lighting.",
-    date: "2023-10-15",
-    media: [
-      { type: "image", src: "assets/images/Celestial-Trivar.png", alt: "Celestial Trivar" },
-      { type: "image", src: "assets/images/Ascending-Trivar.png", alt: "Ascending Trivar" },
-      { type: "video", src: "assets/videos/Alien-Artifact.mp4", alt: "Alien Artifact" },
-    ]
-  },
-  {
-    id: 2,
-    title: "Concept Art",
-    description: "A sci-fi landscape exploring alien architecture and bioluminescent flora.",
-    date: "2023-11-20",
-    media: [
-      { type: "image", src: "assets/images/Crown-of-Trivar.png", alt: "Crown of Trivar" }
-    ]
-  }
-  // Add more items here
-];
+// Portfolio Grid & Modal System
 
+let portfolioData = [];
 let currentItemIndex = 0;
 let currentMediaIndex = 0;
+
+async function initPortfolio() {
+  portfolioData = await loadData("portfolio");
+  renderPortfolioGrid();
+}
+
+function renderPortfolioGrid() {
+  const grid = document.getElementById("portfolio");
+  if (!grid) return;
+
+  grid.innerHTML = "";
+
+  portfolioData.forEach((item, index) => {
+    const firstMedia = item.media ? item.media[0] : null;
+    const thumbUrl = item.thumb || item.src || "assets/images/placeholder.jpg";
+
+    const card = document.createElement("div");
+    card.className = "card portfolio-card";
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", `View ${item.title}`);
+
+    const imgHtml = `<img src="${thumbUrl}" alt="${item.alt || item.title}" loading="lazy" />`;
+
+    card.innerHTML = `
+      ${imgHtml}
+      <h3>${item.title}</h3>
+      <p>${item.description.substring(0, 60)}...</p>
+      <small>Created: ${item.date}</small>
+    `;
+
+    card.addEventListener("click", () => openPortfolioModal(item.id));
+    card.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openPortfolioModal(item.id);
+      }
+    });
+
+    grid.appendChild(card);
+  });
+}
 
 function openPortfolioModal(itemId) {
   currentItemIndex = portfolioData.findIndex(item => item.id === itemId);
   currentMediaIndex = 0;
   displayPortfolioModal();
-  document.getElementById("portfolio-modal").style.display = "flex";
+  const modal = document.getElementById("portfolio-modal");
+  if (modal) {
+    modal.style.display = "flex";
+    if (modal.classList) {
+      modal.classList.add("active");
+    }
+  }
 }
 
 function displayPortfolioModal() {
   const item = portfolioData[currentItemIndex];
-  const media = item.media[currentMediaIndex];
-  
-  const mediaElement = media.type === "image" 
-    ? `<img src="${media.src}" alt="${media.alt}" class="modal-media">`
-    : `<video src="${media.src}" controls class="modal-media"></video>`;
-  
-  document.getElementById("modal-media").innerHTML = mediaElement;
+  if (!item) return;
+
+  const media = item.media ? item.media[currentMediaIndex] : null;
+  const mediaContainer = document.getElementById("modal-media");
+
+  if (!mediaContainer) return;
+
+  if (!media) {
+    mediaContainer.innerHTML = `<img src="${item.src}" alt="${item.title}" class="modal-media" />`;
+  } else if (media.type === "image") {
+    mediaContainer.innerHTML = `<img src="${media.src}" alt="${media.alt}" class="modal-media" loading="lazy" />`;
+  } else if (media.type === "video") {
+    mediaContainer.innerHTML = `<video src="${media.src}" controls class="modal-media"></video>`;
+  }
+
   document.getElementById("modal-title").textContent = item.title;
   document.getElementById("modal-description").textContent = item.description;
   document.getElementById("modal-date").textContent = `Created: ${item.date}`;
-  
-  // Update navigation indicators
-  document.getElementById("media-counter").textContent = `${currentMediaIndex + 1} / ${item.media.length}`;
+
+  const mediaCount = item.media ? item.media.length : 1;
+  document.getElementById("media-counter").textContent = `${currentMediaIndex + 1} / ${mediaCount}`;
+
+  // Update button states
+  const prevMediaBtn = document.querySelector(".media-nav .nav-btn:first-child");
+  const nextMediaBtn = document.querySelector(".media-nav .nav-btn:last-child");
+
+  if (prevMediaBtn) {
+    prevMediaBtn.disabled = currentMediaIndex === 0;
+  }
+  if (nextMediaBtn) {
+    nextMediaBtn.disabled = currentMediaIndex === mediaCount - 1;
+  }
 }
 
 function nextMedia() {
-  if (currentMediaIndex < portfolioData[currentItemIndex].media.length - 1) {
+  const item = portfolioData[currentItemIndex];
+  const mediaCount = item.media ? item.media.length : 1;
+
+  if (currentMediaIndex < mediaCount - 1) {
     currentMediaIndex++;
     displayPortfolioModal();
   }
@@ -81,13 +129,19 @@ function prevItem() {
 }
 
 function closePortfolioModal() {
-  document.getElementById("portfolio-modal").style.display = "none";
+  const modal = document.getElementById("portfolio-modal");
+  if (modal) {
+    modal.style.display = "none";
+    if (modal.classList) {
+      modal.classList.remove("active");
+    }
+  }
 }
 
 // Keyboard navigation
 document.addEventListener("keydown", (e) => {
   const modal = document.getElementById("portfolio-modal");
-  if (modal && modal.style.display === "flex") {
+  if (modal && (modal.style.display === "flex" || modal.classList.contains("active"))) {
     if (e.key === "ArrowRight") nextMedia();
     if (e.key === "ArrowLeft") prevMedia();
     if (e.key === "ArrowDown") nextItem();
@@ -99,5 +153,10 @@ document.addEventListener("keydown", (e) => {
 // Click outside modal to close
 window.addEventListener("click", (e) => {
   const modal = document.getElementById("portfolio-modal");
-  if (e.target === modal) closePortfolioModal();
+  if (modal && e.target === modal) {
+    closePortfolioModal();
+  }
 });
+
+// Initialize on load
+document.addEventListener("DOMContentLoaded", initPortfolio);

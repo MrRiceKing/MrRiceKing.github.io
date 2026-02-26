@@ -2,25 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mr. RiceKing - Resources</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mr. RiceKing - Recommended Resources. Tools, tutorials, and learning materials for creators.">
+    <title>Mr. RiceKing - Resources</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="preload" href="css/styles.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-
-  <!-- Vanta Background -->
   <div id="vanta-bg"></div>
 
-  <!-- Layout Wrapper -->
   <div class="layout">
-
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo-area">
         <h1 class="site-title">Mr. RiceKing</h1>
@@ -35,14 +28,15 @@
         <a href="resources.html">Resources</a>
         <a href="contact.html">Contact</a>
       </nav>
+
+      <div class="ornament-line"></div>
     </aside>
 
-    <!-- Main Content -->
     <main class="content">
       <section class="page-section">
         <h2>Resources</h2>
-        <p>Tools, tutorials, and resources I recommend for creators and developers.</p>
-        
+        <p>Tools, tutorials, and resources I recommend for creators and developers. Filter by category or sort by rating.</p>
+
         <div class="resource-filters">
           <select id="category">
             <option value="all">All Categories</option>
@@ -55,19 +49,15 @@
           </select>
         </div>
 
-        <div class="grid" id="resources">
-          <!-- Dynamically generated from resources-manager.js -->
-        </div>
+        <div class="grid" id="resources"></div>
       </section>
     </main>
-
   </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-    <script src="js/vanta-init.js"></script>
-    <script src="js/resources-manager.js"></script>
-    <script src="js/main.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha512-vYpn4GhMVU8fLZQPPyy9mmdCiGXABwNRiFKKZ/gnVl3xG3r3K/5FLELf9YYN9L5l5PqL8KwXwZN5l/c06I4mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+  <script src="js/vanta-init.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/resources-manager.js"></script>
 </body>
 </html>

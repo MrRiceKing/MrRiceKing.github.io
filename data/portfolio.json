@@ -6,7 +6,10 @@
     "date": "2023-10-15",
     "thumb": "assets/images/Celestial-Trivar.png",
     "src": "assets/images/Celestial-Trivar.png",
-    "alt": "Celestial Trivar Portrait"
+    "alt": "Celestial Trivar Portrait",
+    "media": [
+      { "type": "image", "src": "assets/images/Celestial-Trivar.png", "alt": "Celestial Trivar Portrait" }
+    ]
   },
   {
     "id": 2,
@@ -15,7 +18,10 @@
     "date": "2023-10-18",
     "thumb": "assets/images/Ascending-Trivar.png",
     "src": "assets/images/Ascending-Trivar.png",
-    "alt": "Ascending Trivar Character"
+    "alt": "Ascending Trivar Character",
+    "media": [
+      { "type": "image", "src": "assets/images/Ascending-Trivar.png", "alt": "Ascending Trivar Character" }
+    ]
   },
   {
     "id": 3,
@@ -24,6 +30,9 @@
     "date": "2023-11-20",
     "thumb": "assets/images/Crown-of-Trivar.png",
     "src": "assets/images/Crown-of-Trivar.png",
-    "alt": "Crown of Trivar Concept Art"
+    "alt": "Crown of Trivar Concept Art",
+    "media": [
+      { "type": "image", "src": "assets/images/Crown-of-Trivar.png", "alt": "Crown of Trivar Concept Art" }
+    ]
   }
 ]

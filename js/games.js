@@ -1,88 +1,102 @@
-// Games data - with tags instead of priority
-const gamesData = [
-  {
-    id: 1,
-    title: "The Witcher 3",
-    description: "An epic open-world RPG with branching narratives, complex characters, and a richly detailed fantasy world. Incredible storytelling and exploration.",
-    tags: ["Favorites", "Memorable"],
-    cover: "assets/images/witcher.jpg",
-    rating: 9,
-    time: "100 hours",
-    style: "Exploratory",
-    review: "One of the greatest RPGs ever made. The side quests are better than most games' main stories.",
-    link: "https://store.steampowered.com/app/292030"
-  },
-  {
-    id: 2,
-    title: "Garry's Mod",
-    description: "A sandbox game that lets you manipulate the Source engine. Create machinima, build contraptions, or play custom game modes made by the community.",
-    tags: ["Favorites", "In Rotation"],
-    cover: "assets/images/gmod.jpg",
-    rating: 10,
-    time: "3400 hours",
-    style: "Sandbox",
-    review: "Endless potential for creativity! Still playing after all these years.",
-    link: "https://store.steampowered.com/app/4000/Garrys_Mod/"
-  },
-  {
-    id: 3,
-    title: "Hollow Knight",
-    description: "A challenging 2D action-adventure game set in a vast interconnected world. Beautiful art style and tight combat mechanics.",
-    tags: ["Memorable"],
-    cover: "assets/images/hollow-knight.jpg",
-    rating: 9,
-    time: "45 hours",
-    style: "Metroidvania",
-    review: "A masterpiece of indie game design. Every boss fight is memorable.",
-    link: "https://store.steampowered.com/app/367520"
-  },
-  {
-    id: 4,
-    title: "Elden Ring",
-    description: "A collaborative open-world action RPG from FromSoftware and George R.R. Martin. Challenging combat with freedom of exploration.",
-    tags: ["In Rotation"],
-    cover: "assets/images/elden-ring.jpg",
-    rating: 9,
-    time: "120 hours",
-    style: "Action RPG",
-    review: "Incredible world design. The difficulty is fair and rewarding.",
-    link: "https://store.steampowered.com/app/1245620"
-  },
-  {
-    id: 5,
-    title: "Stardew Valley",
-    description: "A cozy farming simulation with fishing, mining, and community interaction. Perfect for relaxation.",
-    tags: ["In Rotation"],
-    cover: "assets/images/stardew.jpg",
-    rating: 8,
-    time: "200+ hours",
-    style: "Simulation",
-    review: "Wholesome and addictive. The perfect game to unwind with.",
-    link: "https://store.steampowered.com/app/413150"
-  }
-];
+// Games Grid & Modal System
 
+let gamesData = [];
+let filteredGames = [];
 let currentGameIndex = 0;
-let filteredGames = [...gamesData];
+
+async function initGames() {
+  gamesData = await loadData("games");
+  filteredGames = [...gamesData];
+  renderGames();
+}
+
+function renderGames() {
+  const grid = document.getElementById("games");
+  if (!grid) return;
+
+  grid.innerHTML = "";
+
+  filteredGames.forEach((game) => {
+    const card = document.createElement("div");
+    card.className = "card game-card";
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", `View ${game.title}`);
+
+    const tagColor = game.tags && game.tags.includes("Favorites") ? "#FF6B6B" : 
+                     game.tags && game.tags.includes("In Rotation") ? "#FFA500" : "#4FB6FF";
+    const primaryTag = game.tags && game.tags.length > 0 ? game.tags[0] : "Gaming";
+
+    card.innerHTML = `
+      <div class="card-tag" style="background-color: ${tagColor};">${primaryTag}</div>
+      <img src="${game.cover}" alt="${game.title}" loading="lazy" />
+      <h3>${game.title}</h3>
+      <p>${game.description || game.playstyle}</p>
+      <small>Rating: ${'★'.repeat(game.rating)}${'☆'.repeat(10 - game.rating)}</small>
+    `;
+
+    card.addEventListener("click", () => openGameModal(game.id));
+    card.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openGameModal(game.id);
+      }
+    });
+
+    grid.appendChild(card);
+  });
+}
 
 function openGameModal(gameId) {
   currentGameIndex = filteredGames.findIndex(g => g.id === gameId);
   displayGameModal();
-  document.getElementById("games-modal").style.display = "flex";
+  const modal = document.getElementById("games-modal");
+  if (modal) {
+    modal.style.display = "flex";
+    if (modal.classList) {
+      modal.classList.add("active");
+    }
+  }
 }
 
 function displayGameModal() {
   const game = filteredGames[currentGameIndex];
-  
-  document.getElementById("modal-game-cover").innerHTML = 
-    `<img src="${game.cover}" alt="${game.title}" class="modal-media">`;
-  document.getElementById("modal-game-title").innerHTML = 
-    `<a href="${game.link}" target="_blank">${game.title}</a>`;
-  document.getElementById("modal-game-rating").textContent = `${'★'.repeat(game.rating)}${'☆'.repeat(10-game.rating)}`;
-  document.getElementById("modal-game-time").textContent = `Playtime: ${game.time}`;
-  document.getElementById("modal-game-style").textContent = `Style: ${game.style}`;
-  document.getElementById("modal-game-review").textContent = game.review;
-  document.getElementById("modal-game-description").textContent = game.description;
+  if (!game) return;
+
+  const coverEl = document.getElementById("modal-game-cover");
+  if (coverEl) {
+    coverEl.innerHTML = `<img src="${game.cover}" alt="${game.title}" loading="lazy" />`;
+  }
+
+  const titleEl = document.getElementById("modal-game-title");
+  if (titleEl) {
+    if (game.link) {
+      titleEl.innerHTML = `<a href="${game.link}" target="_blank" rel="noopener noreferrer">${game.title}</a>`;
+    } else {
+      titleEl.textContent = game.title;
+    }
+  }
+
+  const ratingEl = document.getElementById("modal-game-rating");
+  if (ratingEl) {
+    ratingEl.textContent = `${'★'.repeat(game.rating)}${'☆'.repeat(10 - game.rating)}`;
+  }
+
+  document.getElementById("modal-game-time").textContent = `Playtime: ${game.hours || 0} hours`;
+  document.getElementById("modal-game-style").textContent = `Style: ${game.playstyle || "Unknown"}`;
+
+  // Determine description vs review
+  const descEl = document.getElementById("modal-game-description");
+  if (descEl) {
+    descEl.textContent = game.description || game.review || "No description available.";
+  }
+
+  // Update button states
+  const prevBtn = document.querySelector(".game-nav .nav-btn-vertical:first-child");
+  const nextBtn = document.querySelector(".game-nav .nav-btn-vertical:last-child");
+
+  if (prevBtn) prevBtn.disabled = currentGameIndex === 0;
+  if (nextBtn) nextBtn.disabled = currentGameIndex === filteredGames.length - 1;
 }
 
 function nextGame() {
@@ -100,60 +114,46 @@ function prevGame() {
 }
 
 function closeGameModal() {
-  document.getElementById("games-modal").style.display = "none";
+  const modal = document.getElementById("games-modal");
+  if (modal) {
+    modal.style.display = "none";
+    if (modal.classList) {
+      modal.classList.remove("active");
+    }
+  }
 }
 
 function filterByTag(tag) {
   // Update active button
   document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
   event.target.classList.add("active");
-  
-  // Filter games
+
+  // Filter
   if (tag === "all") {
     filteredGames = [...gamesData];
   } else {
-    filteredGames = gamesData.filter(g => g.tags.includes(tag));
+    filteredGames = gamesData.filter(g => g.tags && g.tags.includes(tag));
   }
   renderGames();
-}
-
-function renderGames() {
-  const grid = document.getElementById("games");
-  grid.innerHTML = "";
-  
-  filteredGames.forEach(game => {
-    const card = document.createElement("div");
-    card.className = "card game-card";
-    card.onclick = () => openGameModal(game.id);
-    const tagColor = game.tags.includes("Favorites") ? "#FF6B6B" : 
-                     game.tags.includes("In Rotation") ? "#FFA500" : "#4FB6FF";
-    const primaryTag = game.tags[0];
-    card.innerHTML = `
-      <div class="card-tag" style="background-color: ${tagColor};">${primaryTag}</div>
-      <img src="${game.cover}" alt="${game.title}">
-      <h3>${game.title}</h3>
-      <p>${game.description.substring(0, 70)}...</p>
-      <small>Rating: ${'★'.repeat(game.rating)}${'☆'.repeat(10-game.rating)}</small>
-    `;
-    grid.appendChild(card);
-  });
 }
 
 // Keyboard navigation
 document.addEventListener("keydown", (e) => {
   const modal = document.getElementById("games-modal");
-  if (modal && modal.style.display === "flex") {
+  if (modal && (modal.style.display === "flex" || modal.classList.contains("active"))) {
     if (e.key === "ArrowRight") nextGame();
     if (e.key === "ArrowLeft") prevGame();
     if (e.key === "Escape") closeGameModal();
   }
 });
 
-// Click outside modal to close
+// Click outside to close
 window.addEventListener("click", (e) => {
   const modal = document.getElementById("games-modal");
-  if (e.target === modal) closeGameModal();
+  if (modal && e.target === modal) {
+    closeGameModal();
+  }
 });
 
 // Initialize on load
-document.addEventListener("DOMContentLoaded", renderGames);
+document.addEventListener("DOMContentLoaded", initGames);

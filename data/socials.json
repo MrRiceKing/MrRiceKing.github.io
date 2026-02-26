@@ -20,13 +20,13 @@
     "color": "#1B2838"
   },
   {
-    "id": "twitter",
-    "name": "Twitter",
+    "id": "snapchat",
+    "name": "Snapchat",
     "displayName": "Mr. RiceKing",
     "username": "@MrRiceKing",
-    "description": "Follow for daily art updates, game streams, and creative process insights. Retweets of inspiring art and gaming content too.",
-    "link": "https://twitter.com/MrRiceKing",
-    "icon": "assets/icons/twitter.png",
+    "description": "Follow for daily art updates, game streams, and creative process insights. Showcases of inspiring art and gaming content too.",
+    "link": "https://snapchat.com/MrRiceKing",
+    "icon": "assets/icons/snapchat.png",
     "color": "#1DA1F2"
   },
   {

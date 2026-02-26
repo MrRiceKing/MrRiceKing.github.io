@@ -1,82 +1,81 @@
-// Projects data - categorized by priority
-const projectsData = [
-  {
-    id: 1,
-    title: "Indie Game RPG",
-    description: "A turn-based RPG with deep character customization, branching narratives, and a unique magic system. Set in a fantasy world inspired by Celtic mythology.",
-    priority: "high",
-    cover: "assets/images/project-game.jpg",
-    link: "https://github.com/yourrepo/game-rpg",
-    status: "In Development - 40% Complete"
-  },
-  {
-    id: 2,
-    title: "Digital Art Series",
-    description: "A collection of interconnected digital paintings exploring themes of identity and transformation through fantasy character studies.",
-    priority: "high",
-    cover: "assets/images/project-art.jpg",
-    link: "",
-    status: "Ongoing"
-  },
-  {
-    id: 3,
-    title: "Community Discord Bot",
-    description: "A custom Discord bot with moderation tools, game utilities, and interactive features for my gaming community.",
-    priority: "medium",
-    cover: "assets/images/project-bot.jpg",
-    link: "https://github.com/yourrepo/discord-bot",
-    status: "In Development - 60% Complete"
-  },
-  {
-    id: 4,
-    title: "Texture Pack Creation",
-    description: "Custom texture packs for various games, blending realistic and fantasy aesthetics.",
-    priority: "medium",
-    cover: "assets/images/project-textures.jpg",
-    link: "",
-    status: "Planning Phase"
-  },
-  {
-    id: 5,
-    title: "Portfolio Website Expansion",
-    description: "Adding advanced features to this website including project showcases, blog section, and commission booking system.",
-    priority: "low",
-    cover: "assets/images/project-web.jpg",
-    link: "https://github.com/yourrepo/portfolio",
-    status: "In Development"
-  },
-  {
-    id: 6,
-    title: "Animation Portfolio",
-    description: "Showcase of character animations, visual effects, and motion design work created in Blender and game engines.",
-    priority: "low",
-    cover: "assets/images/project-animation.jpg",
-    link: "",
-    status: "Concept Phase"
-  }
-];
+// Projects Grid & Modal System
 
+let projectsData = [];
+let filteredProjects = [];
 let currentProjectIndex = 0;
 
+async function initProjects() {
+  projectsData = await loadData("projects");
+  filteredProjects = [...projectsData];
+  renderProjects();
+}
+
+function renderProjects() {
+  const grid = document.getElementById("projects");
+  if (!grid) return;
+
+  grid.innerHTML = "";
+
+  filteredProjects.forEach((project) => {
+    const card = document.createElement("div");
+    card.className = "card project-card";
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", `View ${project.title}`);
+
+    const priorityColor = project.priority === "high" ? "#FF6B6B" : 
+                          project.priority === "medium" ? "#FFA500" : "#4FB6FF";
+
+    card.innerHTML = `
+      <div class="card-priority" style="background-color: ${priorityColor};">${(project.priority || "low").toUpperCase()}</div>
+      <img src="${project.cover}" alt="${project.title}" loading="lazy" />
+      <h3>${project.title}</h3>
+      <p>${project.description.substring(0, 70)}...</p>
+      <small>${project.status || "In Development"}</small>
+    `;
+
+    card.addEventListener("click", () => openProjectModal(project.id));
+    card.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openProjectModal(project.id);
+      }
+    });
+
+    grid.appendChild(card);
+  });
+}
+
 function openProjectModal(projectId) {
-  currentProjectIndex = projectsData.findIndex(p => p.id === projectId);
+  currentProjectIndex = filteredProjects.findIndex(p => p.id === projectId);
   displayProjectModal();
-  document.getElementById("projects-modal").style.display = "flex";
+  const modal = document.getElementById("projects-modal");
+  if (modal) {
+    modal.style.display = "flex";
+    if (modal.classList) {
+      modal.classList.add("active");
+    }
+  }
 }
 
 function displayProjectModal() {
-  const project = projectsData[currentProjectIndex];
+  const project = filteredProjects[currentProjectIndex];
+  if (!project) return;
+
+  const coverEl = document.getElementById("modal-project-cover");
+  if (coverEl) {
+    coverEl.innerHTML = `<img src="${project.cover}" alt="${project.title}" loading="lazy" />`;
+  }
+
   const priorityColor = project.priority === "high" ? "#FF6B6B" : 
                         project.priority === "medium" ? "#FFA500" : "#4FB6FF";
-  
-  document.getElementById("modal-project-cover").innerHTML = 
-    `<img src="${project.cover}" alt="${project.title}" class="modal-media" style="width:100%; height:400px; object-fit:cover; border-radius:10px;">`;
+
   document.getElementById("modal-project-title").textContent = project.title;
-  document.getElementById("modal-project-priority").textContent = project.priority.toUpperCase();
+  document.getElementById("modal-project-priority").textContent = (project.priority || "low").toUpperCase();
   document.getElementById("modal-project-priority").style.color = priorityColor;
   document.getElementById("modal-project-description").textContent = project.description;
-  document.getElementById("modal-project-status").textContent = `Status: ${project.status}`;
-  
+  document.getElementById("modal-project-status").textContent = `Status: ${project.status || "In Development"}`;
+
   const linkBtn = document.getElementById("modal-project-link");
   if (project.link) {
     linkBtn.style.display = "inline-block";
@@ -84,10 +83,17 @@ function displayProjectModal() {
   } else {
     linkBtn.style.display = "none";
   }
+
+  // Update button states
+  const prevBtn = document.querySelector(".project-nav .nav-btn-vertical:first-child");
+  const nextBtn = document.querySelector(".project-nav .nav-btn-vertical:last-child");
+
+  if (prevBtn) prevBtn.disabled = currentProjectIndex === 0;
+  if (nextBtn) nextBtn.disabled = currentProjectIndex === filteredProjects.length - 1;
 }
 
 function nextProject() {
-  if (currentProjectIndex < projectsData.length - 1) {
+  if (currentProjectIndex < filteredProjects.length - 1) {
     currentProjectIndex++;
     displayProjectModal();
   }
@@ -101,21 +107,48 @@ function prevProject() {
 }
 
 function closeProjectModal() {
-  document.getElementById("projects-modal").style.display = "none";
+  const modal = document.getElementById("projects-modal");
+  if (modal) {
+    modal.style.display = "none";
+    if (modal.classList) {
+      modal.classList.remove("active");
+    }
+  }
+}
+
+function filterByPriority(priority) {
+  // Update active button
+  document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+  if (event && event.target) {
+    event.target.classList.add("active");
+  }
+
+  // Filter
+  if (priority === "all") {
+    filteredProjects = [...projectsData];
+  } else {
+    filteredProjects = projectsData.filter(p => p.priority === priority);
+  }
+  renderProjects();
 }
 
 // Keyboard navigation
 document.addEventListener("keydown", (e) => {
   const modal = document.getElementById("projects-modal");
-  if (modal && modal.style.display === "flex") {
+  if (modal && (modal.style.display === "flex" || modal.classList.contains("active"))) {
     if (e.key === "ArrowRight") nextProject();
     if (e.key === "ArrowLeft") prevProject();
     if (e.key === "Escape") closeProjectModal();
   }
 });
 
-// Click outside modal to close
+// Click outside to close
 window.addEventListener("click", (e) => {
   const modal = document.getElementById("projects-modal");
-  if (e.target === modal) closeProjectModal();
+  if (modal && e.target === modal) {
+    closeProjectModal();
+  }
 });
+
+// Initialize on load
+document.addEventListener("DOMContentLoaded", initProjects);
