@@ -2,25 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mr. RiceKing - Projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mr. RiceKing - Current Projects. Game development, art series, and creative endeavors.">
+    <title>Mr. RiceKing - Projects</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="preload" href="css/styles.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-
-  <!-- Vanta Background -->
   <div id="vanta-bg"></div>
 
-  <!-- Layout Wrapper -->
   <div class="layout">
-
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo-area">
         <h1 class="site-title">Mr. RiceKing</h1>
@@ -35,14 +28,15 @@
         <a href="resources.html">Resources</a>
         <a href="contact.html">Contact</a>
       </nav>
+
+      <div class="ornament-line"></div>
     </aside>
 
-    <!-- Main Content -->
     <main class="content">
       <section class="page-section">
         <h2>Current Projects</h2>
-        <p>Sneak peek at my ongoing work across gaming, art, and tech.</p>
-        
+        <p>Sneak peek at my ongoing work across gaming, art, and technology. Filter by priority to find what interests you.</p>
+
         <div class="priority-filters">
           <button class="filter-btn active" onclick="filterByPriority('all')">All Projects</button>
           <button class="filter-btn" onclick="filterByPriority('high')">High Priority</button>
@@ -50,15 +44,11 @@
           <button class="filter-btn" onclick="filterByPriority('low')">Low Priority</button>
         </div>
 
-        <div class="grid" id="projects">
-          <!-- Dynamically generated from projects-viewer.js -->
-        </div>
+        <div class="grid" id="projects"></div>
       </section>
     </main>
-
   </div>
 
-  <!-- Projects Modal -->
   <div id="projects-modal" class="projects-modal">
     <div class="projects-modal-content">
       <span class="modal-close" onclick="closeProjectModal()">&times;</span>
@@ -69,63 +59,20 @@
         <div class="priority-badge" id="modal-project-priority">HIGH</div>
         <h2 id="modal-project-title">Project Title</h2>
         <p id="modal-project-description">Description</p>
-        <p id="modal-project-status">Status: </p>
-        <a id="modal-project-link" href="#" target="_blank" class="btn-link">View Project</a>
+        <p id="modal-project-status">Status:</p>
+        <a id="modal-project-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-link">View Project</a>
       </div>
       <div class="project-nav">
-        <button onclick="prevProject()" class="nav-btn-vertical">&#x25B2;</button>
-        <button onclick="nextProject()" class="nav-btn-vertical">&#x25BC;</button>
+        <button onclick="prevProject()" class="nav-btn-vertical" aria-label="Previous project">▲</button>
+        <button onclick="nextProject()" class="nav-btn-vertical" aria-label="Next project">▼</button>
       </div>
     </div>
   </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-    <script src="js/vanta-init.js"></script>
-    <script src="js/projects-viewer.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-      // Generate projects grid from data
-      let filteredProjects = [...projectsData];
-
-      function renderProjects() {
-        const grid = document.getElementById("projects");
-        grid.innerHTML = "";
-        
-        filteredProjects.forEach(project => {
-          const priorityColor = project.priority === "high" ? "#FF6B6B" : 
-                                project.priority === "medium" ? "#FFA500" : "#4FB6FF";
-          const card = document.createElement("div");
-          card.className = "card project-card";
-          card.onclick = () => openProjectModal(project.id);
-          card.innerHTML = `
-            <div class="card-priority" style="background-color: ${priorityColor};">${project.priority.toUpperCase()}</div>
-            <img src="${project.cover}" alt="${project.title}">
-            <h3>${project.title}</h3>
-            <p>${project.description.substring(0, 70)}...</p>
-            <small>${project.status}</small>
-          `;
-          grid.appendChild(card);
-        });
-      }
-
-      function filterByPriority(priority) {
-        // Update active button
-        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-        event.target.classList.add("active");
-        
-        // Filter projects
-        if (priority === "all") {
-          filteredProjects = [...projectsData];
-        } else {
-          filteredProjects = projectsData.filter(p => p.priority === priority);
-        }
-        renderProjects();
-      }
-
-      // Initialize on load
-      document.addEventListener("DOMContentLoaded", renderProjects);
-    </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha512-vYpn4GhMVU8fLZQPPyy9mmdCiGXABwNRiFKKZ/gnVl3xG3r3K/5FLELf9YYN9L5l5PqL8KwXwZN5l/c06I4mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+  <script src="js/vanta-init.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/projects-viewer.js"></script>
 </body>
 </html>
