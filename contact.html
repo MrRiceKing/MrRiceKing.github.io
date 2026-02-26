@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mr. RiceKing - Contact & Connect. Find me on Discord, Steam, Twitter, and more.">
+    <meta name="description" content="Mr. RiceKing - Contact & Connect. Find me on Discord, Steam, and more.">
     <title>Mr. RiceKing - Contact</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
         <a href="portfolio.html">Art Portfolio</a>
         <a href="projects.html">Projects</a>
         <a href="resources.html">Resources</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
 
       <div class="ornament-line"></div>
@@ -46,15 +46,35 @@
           </a>
         </div>
 
-        <h3 style="margin-top: 50px; margin-bottom: 30px;color: var(--highlight-icy);">Find Me On</h3>
+        <h3 style="margin-top: 50px; margin-bottom: 30px;color: var(--highlight-icy);">Gaming Platforms</h3>
+        <div class="contact-icons">
+          <div class="contact-item" data-modal="steam">
+            <img src="assets/icons/steam.png" alt="Steam" loading="lazy">
+            <p>Steam</p>
+          </div>
+          <div class="contact-item" data-modal="epicgames">
+            <img src="assets/icons/epicgames.png" alt="Epic Games" loading="lazy">
+            <p>Epic Games</p>
+          </div>
+          <div class="contact-item" data-modal="riotgames">
+            <img src="assets/icons/riotgames.png" alt="Riot Games" loading="lazy">
+            <p>Riot Games</p>
+          </div>
+          <div class="contact-item" data-modal="ubisoft">
+            <img src="assets/icons/ubisoft.png" alt="Ubisoft" loading="lazy">
+            <p>Ubisoft</p>
+          </div>
+          <div class="contact-item" data-modal="battlenet">
+            <img src="assets/icons/battlenet.png" alt="Battle.net" loading="lazy">
+            <p>Battle.net</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 50px; margin-bottom: 30px;color: var(--highlight-icy);">Social Media</h3>
         <div class="contact-icons">
           <div class="contact-item" data-modal="discord">
             <img src="assets/icons/discord.png" alt="Discord" loading="lazy">
             <p>Discord</p>
-          </div>
-          <div class="contact-item" data-modal="steam">
-            <img src="assets/icons/steam.png" alt="Steam" loading="lazy">
-            <p>Steam</p>
           </div>
           <div class="contact-item" data-modal="snapchat">
             <img src="assets/icons/snapchat.png" alt="Snapchat" loading="lazy">
@@ -71,7 +91,7 @@
 
   <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span class="close" onclick="closeModal()">&times;</span>
       <div id="modal-body"></div>
     </div>
   </div>

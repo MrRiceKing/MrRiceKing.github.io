@@ -22,7 +22,7 @@
 
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="gamer.html">Gamer Profile</a>
+        <a href="gamer.html" class="active">Gamer Profile</a>
         <a href="portfolio.html">Art Portfolio</a>
         <a href="projects.html">Projects</a>
         <a href="resources.html">Resources</a>
@@ -44,6 +44,22 @@
               <img src="assets/icons/steam.png" alt="Steam" loading="lazy">
               <p>Steam</p>
             </div>
+            <div class="icon-item" data-modal="epicgames">
+              <img src="assets/icons/epicgames.png" alt="Epic Games" loading="lazy">
+              <p>Epic Games</p>
+            </div>
+            <div class="icon-item" data-modal="riotgames">
+              <img src="assets/icons/riotgames.png" alt="Riot Games" loading="lazy">
+              <p>Riot Games</p>
+            </div>
+            <div class="icon-item" data-modal="ubisoft">
+              <img src="assets/icons/ubisoft.png" alt="Ubisoft" loading="lazy">
+              <p>Ubisoft</p>
+            </div>
+            <div class="icon-item" data-modal="battlenet">
+              <img src="assets/icons/battlenet.png" alt="Battle.net" loading="lazy">
+              <p>Battle.net</p>
+            </div>
           </div>
         </div>
 
@@ -57,6 +73,13 @@
         <div class="grid" id="games"></div>
       </section>
     </main>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
   </div>
 
   <div id="games-modal" class="games-modal">
