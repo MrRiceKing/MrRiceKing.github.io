@@ -105,7 +105,7 @@ async function openSocialModal(socialId) {
     <h2>${social.displayName}</h2>
     <p><strong>${social.username}</strong></p>
     <p>${social.description}</p>
-    <a href="${social.link}" target="_blank" class="btn">Visit ${social.name}</a>
+    <a href="${social.link}" target="_blank" class="btn">Click to go to ${social.name}</a>
   `;
 
   modal.style.display = "flex";

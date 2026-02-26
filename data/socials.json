@@ -2,8 +2,8 @@
   {
     "id": "discord",
     "name": "Discord",
-    "displayName": "Mr. RiceKing",
-    "username": "@mr.riceking",
+    "displayName": "The Kingdom Awaits!",
+    "username": "Username: @mr.riceking",
     "description": "Join my community for gaming and art discussions. Share your creations, find collaborators, and connect with fellow artists and gamers.",
     "link": "https://discord.gg/59fvxyjfKD",
     "icon": "assets/icons/discord.png",
@@ -12,8 +12,8 @@
   {
     "id": "steam",
     "name": "Steam",
-    "displayName": "Mr. RiceKing",
-    "username": "MrRiceKing",
+    "displayName": "Time to Game!",
+    "username": "Friend Code: 102852535",
     "description": "Add my Steam profile to see my game library, achievements, and playtime. Let's game together and share recommendations.",
     "link": "https://steamcommunity.com/id/MrRiceKing",
     "icon": "assets/icons/steam.png",
@@ -22,10 +22,10 @@
   {
     "id": "snapchat",
     "name": "Snapchat",
-    "displayName": "Mr. RiceKing",
-    "username": "@MrRiceKing",
+    "displayName": "Slice of Life!",
+    "username": "@MrRiceKing-aj",
     "description": "Follow for daily art updates, game streams, and creative process insights. Showcases of inspiring art and gaming content too.",
-    "link": "https://snapchat.com/MrRiceKing",
+    "link": "https://snapchat.com/add/MrRiceKing-aj",
     "icon": "assets/icons/snapchat.png",
     "color": "#1DA1F2"
   },
@@ -52,7 +52,7 @@
   {
     "id": "paypal",
     "name": "PayPal",
-    "displayName": "Support my Work",
+    "displayName": "Support The Kingdom!",
     "username": "@TheRiceKingdom",
     "description": "Support my creative endeavors through PayPal donations. Every contribution helps fund new projects and resources.",
     "link": "https://paypal.me/TheRiceKingdom",
