@@ -98,5 +98,25 @@
     "link": "https://paypal.me/TheRiceKingdom",
     "icon": "assets/icons/paypal.png",
     "color": "#003087"
+  },
+  {
+    "id": "artstation",
+    "name": "ArtStation",
+    "displayName": "My Professional Portfolio",
+    "username": "ArtStation: MrRiceKing",
+    "description": "High-quality digital art and character designs. Showcasing professional work, concept art, and finished illustrations across multiple styles.",
+    "link": "https://www.artstation.com/mrriceking",
+    "icon": "assets/icons/artstation.png",
+    "color": "#13AFF0"
+  },
+  {
+    "id": "sketchfab",
+    "name": "Sketchfab",
+    "displayName": "3D Models",
+    "username": "Sketchfab: MrRiceKing",
+    "description": "Interactive 3D models, characters, and environmental assets. Explore detailed 3D work with viewer controls and technical specifications.",
+    "link": "https://sketchfab.com/mrriceking",
+    "icon": "assets/icons/sketchfab.png",
+    "color": "#1CAAD9"
   }
 ]
