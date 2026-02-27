@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mr. RiceKing - Gamer Profile. Game library, playthrough logs, and gaming recommendations.">
+    <meta name="description" content="Mr. RiceKing - Gamer Profile. Game library, playtime, and gaming statistics.">
     <title>Mr. RiceKing - Gamer Profile</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -35,71 +35,37 @@
     <main class="content">
       <section class="page-section">
         <h2>Gamer Profile</h2>
-        <p>My favorite games, current obsessions, and memorable gaming moments across multiple platforms.</p>
+        <p>My gaming library and playtime across multiple platforms. From competitive esports to immersive RPGs, here's where I spend my gaming hours.</p>
 
-        <div class="platform-section">
-          <h3>Gaming Platforms</h3>
-          <div class="social-icons">
-            <div class="icon-item" data-modal="steam">
-              <img src="assets/icons/steam.png" alt="Steam" loading="lazy">
-              <p>Steam</p>
-            </div>
-            <div class="icon-item" data-modal="epicgames">
-              <img src="assets/icons/epicgames.png" alt="Epic Games" loading="lazy">
-              <p>Epic Games</p>
-            </div>
-            <div class="icon-item" data-modal="riotgames">
-              <img src="assets/icons/riotgames.png" alt="Riot Games" loading="lazy">
-              <p>Riot Games</p>
-            </div>
-            <div class="icon-item" data-modal="ubisoft">
-              <img src="assets/icons/ubisoft.png" alt="Ubisoft" loading="lazy">
-              <p>Ubisoft</p>
-            </div>
-            <div class="icon-item" data-modal="battlenet">
-              <img src="assets/icons/battlenet.png" alt="Battle.net" loading="lazy">
-              <p>Battle.net</p>
-            </div>
-          </div>
-        </div>
-
+        <!-- Filter Buttons -->
         <div class="tag-filters">
           <button class="filter-btn active" onclick="filterByTag('all')">All Games</button>
-          <button class="filter-btn" onclick="filterByTag('Favorites')">Favorites ♥</button>
-          <button class="filter-btn" onclick="filterByTag('In Rotation')">In Rotation</button>
-          <button class="filter-btn" onclick="filterByTag('Memorable')">Memorable</button>
+          <button class="filter-btn" onclick="filterByTag('Favorites')">❤️ Favorites</button>
+          <button class="filter-btn" onclick="filterByTag('In Rotation')">🎮 In Rotation</button>
+          <button class="filter-btn" onclick="filterByTag('Memorable')">⭐ Memorable</button>
         </div>
 
+        <!-- Games Grid -->
         <div class="grid" id="games"></div>
       </section>
     </main>
   </div>
 
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div id="modal-body"></div>
-    </div>
-  </div>
-
+  <!-- Games Modal -->
   <div id="games-modal" class="games-modal">
     <div class="games-modal-content">
       <span class="modal-close" onclick="closeGameModal()">&times;</span>
-      <div class="modal-game-left">
-        <div id="modal-game-cover"></div>
-      </div>
-      <div class="modal-game-right">
-        <h2 id="modal-game-title">Game Title</h2>
-        <p id="modal-game-description">Description</p>
-        <div class="game-stats">
-          <p><strong>Rating:</strong> <span id="modal-game-rating">★★★★★</span></p>
-          <p id="modal-game-time">Playtime: 0 hours</p>
-          <p id="modal-game-style">Style: Unknown</p>
+      <div id="modal-game-cover"></div>
+      <div class="games-modal-details">
+        <h2 id="modal-game-title"></h2>
+        <div id="modal-game-rating"></div>
+        <p id="modal-game-time"></p>
+        <p id="modal-game-style"></p>
+        <p id="modal-game-description"></p>
+        <div class="modal-nav">
+          <button class="nav-btn-vertical" onclick="prevGame()" aria-label="Previous game">▲</button>
+          <button class="nav-btn-vertical" onclick="nextGame()" aria-label="Next game">▼</button>
         </div>
-      </div>
-      <div class="game-nav">
-        <button onclick="prevGame()" class="nav-btn-vertical" aria-label="Previous game">▲</button>
-        <button onclick="nextGame()" class="nav-btn-vertical" aria-label="Next game">▼</button>
       </div>
     </div>
   </div>
