@@ -212,3 +212,88 @@ function closeAllModals() {
   });
   document.body.style.overflow = 'auto';
 }
+
+// ============================================
+// Main Site Logic - Active Nav & Global Functions
+// ============================================
+
+// Global data loading function
+async function loadData(filename) {
+  try {
+    const response = await fetch(`data/${filename}.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(`✓ Loaded ${filename}.json:`, data);
+    return data;
+  } catch (error) {
+    console.error(`✗ Error loading ${filename}.json:`, error);
+    return [];
+  }
+}
+
+// Set active navigation link
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = document.querySelectorAll(".nav-links a");
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+  
+  console.log(`✓ Current page: ${currentPage}`);
+});
+
+// Close modals when clicking outside
+window.addEventListener("click", (event) => {
+  const modal = document.getElementById("modal");
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+// Utility: Close generic modal
+function closeModal() {
+  const modal = document.getElementById("modal");
+  if (modal) {
+    modal.style.display = "none";
+    modal.classList.remove("active");
+  }
+}
+
+// Utility: Open social modal
+function openSocialModal(socialId) {
+  loadData("socials").then(socials => {
+    const social = socials.find(s => s.id === socialId);
+    if (!social) {
+      console.error(`Social with id "${socialId}" not found`);
+      return;
+    }
+
+    const modalBody = document.getElementById("modal-body");
+    if (modalBody) {
+      modalBody.innerHTML = `
+        <div class="modal-social-content" style="text-align: center;">
+          <img src="${social.icon}" alt="${social.name}" class="modal-profile-img" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 15px;">
+          <h2>${social.displayName}</h2>
+          <p style="color: var(--text-secondary); margin: 10px 0;">${social.username}</p>
+          <p style="line-height: 1.7; margin: 15px 0;">${social.description}</p>
+          <a href="${social.link}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: var(--accent-gold); color: var(--bg-dark); border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Visit ${social.name}</a>
+        </div>
+      `;
+    }
+
+    const modal = document.getElementById("modal");
+    if (modal) {
+      modal.classList.add("active");
+      modal.style.display = "flex";
+      console.log(`✓ Opened social modal for: ${social.name}`);
+    }
+  });
+}
