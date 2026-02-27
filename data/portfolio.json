@@ -2,37 +2,96 @@
   {
     "id": 1,
     "title": "Celestial Trivar",
-    "description": "A fantasy character portrait study with ethereal lighting and intricate magical details. Explores celestial themes and divine craftsmanship.",
-    "date": "2023-10-15",
-    "thumb": "assets/images/Celestial-Trivar.png",
-    "src": "assets/images/Celestial-Trivar.png",
-    "alt": "Celestial Trivar Portrait",
+    "category": "2D",
+    "year": 2024,
+    "cover": "assets/images/Portfolio/2d/celestial-trivar.jpg",
     "media": [
-      { "type": "image", "src": "assets/images/Celestial-Trivar.png", "alt": "Celestial Trivar Portrait" }
-    ]
+      "assets/images/Portfolio/2d/celestial-trivar.jpg",
+      "assets/images/Portfolio/2d/celestial-trivar-alt.jpg"
+    ],
+    "summary": "Character illustration",
+    "description": "A mystical character design blending celestial themes with fantasy elements. This piece explores color theory and character personality through visual design.",
+    "tools": "Photoshop, Procreate",
+    "dimensions": "3840x2160"
   },
   {
     "id": 2,
-    "title": "Ascending Trivar",
-    "description": "A dynamic character composition showing transformation and ascension. Features dramatic lighting and flowing ethereal elements.",
-    "date": "2023-10-18",
-    "thumb": "assets/images/Ascending-Trivar.png",
-    "src": "assets/images/Ascending-Trivar.png",
-    "alt": "Ascending Trivar Character",
+    "title": "Ethereal Landscapes",
+    "category": "2D",
+    "year": 2024,
+    "cover": "assets/images/Portfolio/2d/ethereal-landscapes.jpg",
     "media": [
-      { "type": "image", "src": "assets/images/Ascending-Trivar.png", "alt": "Ascending Trivar Character" }
-    ]
+      "assets/images/Portfolio/2d/ethereal-landscapes.jpg"
+    ],
+    "summary": "Concept art environment",
+    "description": "A serene landscape exploration featuring dreamlike environments and atmospheric perspective. This series demonstrates environmental storytelling and mood composition.",
+    "tools": "Photoshop, Clip Studio Paint",
+    "dimensions": "4096x2304"
   },
   {
     "id": 3,
-    "title": "Crown of Trivar",
-    "description": "A detailed concept art piece featuring ornate mystical jewelry and regalia. Showcases intricate linework and fantasy design elements.",
-    "date": "2023-11-20",
-    "thumb": "assets/images/Crown-of-Trivar.png",
-    "src": "assets/images/Crown-of-Trivar.png",
-    "alt": "Crown of Trivar Concept Art",
+    "title": "Text Effects Highlights",
+    "category": "2D",
+    "year": "2013-2019",
+    "cover": "assets/images/Portfolio/2d/Text-Effects-Thumbnail.png",
     "media": [
-      { "type": "image", "src": "assets/images/Crown-of-Trivar.png", "alt": "Crown of Trivar Concept Art" }
-    ]
+      "assets/images/Portfolio/2d/MrRiceKing.png",
+      "assets/images/Portfolio/2d/MrRiceKing.jpg",
+      "assets/images/Portfolio/2d/Lejhind.png",
+      "assets/images/Portfolio/2d/MnsterGaming.png",
+      "assets/images/Portfolio/2d/Bloodline.jpg",
+      "assets/images/Portfolio/2d/The-Crew.png",
+      "assets/images/Portfolio/2d/bad-habit-gaming.jpg",
+      "assets/images/Portfolio/2d/VapeGuru.png"
+    ],
+    "summary": "A collection of text effect designs done in Photoshop",
+    "description": "Before I became more focused on 3D art, I created a variety of text effect designs for gaming channels and brands. This collection showcases my early work in typography and graphic design.",
+    "tools": "Photoshop",
+    "dimensions": "Various"
+  },
+  {
+    "id": 4,
+    "title": "Radiant Kingdom Model",
+    "category": "3D",
+    "year": 2024,
+    "cover": "assets/images/Portfolio/3d/radiant-kingdom.jpg",
+    "media": [
+      "assets/images/Portfolio/3d/radiant-kingdom.jpg",
+      "assets/images/Portfolio/3d/radiant-kingdom-render-2.jpg"
+    ],
+    "summary": "3D character model",
+    "description": "A high-poly 3D character model featuring detailed clothing, intricate accessories, and professional rigging. Created for game and animation applications.",
+    "tools": "Blender, Substance Painter, Marvelous Designer",
+    "dimensions": "4K renders"
+  },
+  {
+    "id": 5,
+    "title": "Fantasy Architecture",
+    "category": "3D",
+    "year": 2023,
+    "cover": "assets/images/Portfolio/3d/fantasy-architecture.jpg",
+    "media": [
+      "assets/images/Portfolio/3d/fantasy-architecture.jpg",
+      "assets/images/Portfolio/3d/fantasy-architecture-interior.jpg"
+    ],
+    "summary": "Architectural environment design",
+    "description": "A detailed fantasy fortress environment showcasing architectural design, lighting setup, and material work. Perfect for game level design and visualization.",
+    "tools": "Blender, Unreal Engine 5",
+    "dimensions": "Various 4K"
+  },
+  {
+    "id": 6,
+    "title": "Creature Design Study",
+    "category": "3D",
+    "year": 2023,
+    "cover": "assets/images/Portfolio/3d/creature-design.jpg",
+    "media": [
+      "assets/images/Portfolio/3d/creature-design.jpg",
+      "assets/images/Portfolio/3d/creature-design-turnaround.jpg"
+    ],
+    "summary": "Organic 3D creature model",
+    "description": "An intricate creature design featuring complex topology, anatomical accuracy, and artistic interpretation. Includes turnaround views and material variations.",
+    "tools": "Blender, ZBrush, Substance Painter",
+    "dimensions": "Turnaround 4096x1024"
   }
 ]

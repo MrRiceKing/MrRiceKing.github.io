@@ -29,7 +29,7 @@ function renderGames() {
 
     card.innerHTML = `
       <div class="card-tag" style="background-color: ${tagColor};">${primaryTag}</div>
-      <img src="${game.cover}" alt="${game.title}" loading="lazy" />
+      <img src="${game.cover}" alt="${game.title}" loading="eager" />
       <h3>${game.title}</h3>
       <p>${game.description || game.playstyle}</p>
       <small>Rating: ${'★'.repeat(game.rating)}${'☆'.repeat(10 - game.rating)}</small>
@@ -65,7 +65,7 @@ function displayGameModal() {
 
   const coverEl = document.getElementById("modal-game-cover");
   if (coverEl) {
-    coverEl.innerHTML = `<img src="${game.cover}" alt="${game.title}" loading="lazy" />`;
+    coverEl.innerHTML = `<img src="${game.cover}" alt="${game.title}" loading="eager" />`;
   }
 
   const titleEl = document.getElementById("modal-game-title");

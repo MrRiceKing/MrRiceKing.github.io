@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mr. RiceKing - Art Portfolio. Digital paintings, character designs, and creative artwork.">
+    <meta name="description" content="Mr. RiceKing - Art Portfolio. Digital art, 3D models, character designs, and creative works.">
     <title>Mr. RiceKing - Art Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="gamer.html">Gamer Profile</a>
-        <a href="portfolio.html">Art Portfolio</a>
+        <a href="portfolio.html" class="active">Art Portfolio</a>
         <a href="projects.html">Projects</a>
         <a href="resources.html">Resources</a>
         <a href="contact.html">Contact</a>
@@ -35,31 +35,79 @@
     <main class="content">
       <section class="page-section">
         <h2>Art Portfolio</h2>
-        <p>Click any piece to explore in detail. Swipe with arrow keys or click navigation buttons.</p>
-        <div class="grid" id="portfolio"></div>
+        <p>A collection of digital art, character designs, 3D models, and creative projects showcasing my artistic journey.</p>
+
+        <!-- Portfolio Platform Links -->
+        <div class="portfolio-platforms">
+          <h3>My Portfolio Sites</h3>
+          <div class="portfolio-icons">
+            <div class="portfolio-link-item" data-modal="artstation">
+              <img src="assets/icons/artstation.png" alt="ArtStation" loading="lazy">
+              <p>ArtStation</p>
+            </div>
+            <div class="portfolio-link-item" data-modal="sketchfab">
+              <img src="assets/icons/sketchfab.png" alt="Sketchfab" loading="lazy">
+              <p>Sketchfab</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2D Digital Art Section -->
+        <div class="portfolio-category">
+          <div class="category-header">
+            <div class="ornament-line"></div>
+            <h3>2D Digital Art</h3>
+            <div class="ornament-line"></div>
+          </div>
+          <p class="category-summary">Illustrations, character designs, and digital paintings showcasing stylized characters and imaginative worlds.</p>
+          <div class="grid" id="portfolio-2d"></div>
+        </div>
+
+        <!-- 3D Models & Design Section -->
+        <div class="portfolio-category">
+          <div class="category-header">
+            <div class="ornament-line"></div>
+            <h3>3D Models & Design</h3>
+            <div class="ornament-line"></div>
+          </div>
+          <p class="category-summary">3D character models, environmental designs, and technical renders created with industry-standard software.</p>
+          <div class="grid" id="portfolio-3d"></div>
+        </div>
+
       </section>
     </main>
   </div>
 
+  <!-- Social Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal -->
   <div id="portfolio-modal" class="portfolio-modal">
     <div class="portfolio-modal-content">
       <span class="modal-close" onclick="closePortfolioModal()">&times;</span>
       <div class="modal-left">
-        <div id="modal-media" class="modal-media-container"></div>
+        <div class="modal-media-container">
+          <div id="modal-media"></div>
+        </div>
         <div class="media-nav">
-          <button onclick="prevMedia()" class="nav-btn">&larr; Previous</button>
-          <span id="media-counter">1/1</span>
-          <button onclick="nextMedia()" class="nav-btn">Next &rarr;</button>
+          <button onclick="prevPortfolioMedia()" class="nav-btn" aria-label="Previous media">← Previous</button>
+          <span id="media-counter">1 / 1</span>
+          <button onclick="nextPortfolioMedia()" class="nav-btn" aria-label="Next media">Next →</button>
         </div>
       </div>
       <div class="modal-right">
         <h2 id="modal-title">Title</h2>
         <p id="modal-description">Description</p>
-        <small id="modal-date">Date</small>
+        <div id="modal-details"></div>
       </div>
       <div class="item-nav">
-        <button onclick="prevItem()" class="nav-btn-vertical" aria-label="Previous artwork">▲</button>
-        <button onclick="nextItem()" class="nav-btn-vertical" aria-label="Next artwork">▼</button>
+        <button onclick="prevPortfolioItem()" class="nav-btn-vertical" aria-label="Previous item">▲</button>
+        <button onclick="nextPortfolioItem()" class="nav-btn-vertical" aria-label="Next item">▼</button>
       </div>
     </div>
   </div>
