@@ -1,81 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mr. RiceKing - Gamer, Artist, Creator. Portfolio, gaming profiles, and creative projects.">
-    <title>Mr. RiceKing - Home</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Fantasy Realm</title>
+    <meta name="description" content="A legendary fantasy-themed portfolio showcasing gaming, art, projects, and resources." />
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <meta property="og:title" content="Portfolio — Fantasy Realm" />
+    <meta property="og:description" content="A legendary fantasy-themed portfolio showcasing gaming, art, projects, and resources." />
+    <meta property="og:type" content="website" />
 
-<body>
-  <div id="vanta-bg"></div>
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="logo-area">
-        <h1 class="site-title">Mr. RiceKing</h1>
-        <div class="ornament-line"></div>
-      </div>
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
 
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="gamer.html">Gamer Profile</a>
-        <a href="portfolio.html">Art Portfolio</a>
-        <a href="projects.html">Projects</a>
-        <a href="resources.html">Resources</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="ornament-line"></div>
-    </aside>
-
-    <main class="content">
-      <section class="hero">
-        <img src="assets/images/cover.png" alt="Cover Photo" class="cover-photo" loading="lazy">
-        <img src="assets/images/avatar.png" alt="Mr. RiceKing Avatar" class="avatar" loading="lazy">
-        <h1 class="display-name">Mr. RiceKing</h1>
-        <p class="summary">A passionate gamer and artist crafting legendary experiences. Join my journey through games, art, and creativity.</p>
-        <div class="social-icons">
-          <div class="icon-item" data-modal="discord">
-            <img src="assets/icons/discord.png" alt="Discord" loading="lazy">
-            <p>Discord</p>
-          </div>
-          <div class="icon-item" data-modal="steam">
-            <img src="assets/icons/steam.png" alt="Steam" loading="lazy">
-            <p>Steam</p>
-          </div>
-          <div class="icon-item" data-modal="snapchat">
-            <img src="assets/icons/snapchat.png" alt="Snapchat" loading="lazy">
-            <p>Snapchat</p>
-          </div>
-          <div class="icon-item" data-modal="paypal">
-            <img src="assets/icons/paypal.png" alt="PayPal" loading="lazy">
-            <p>Support</p>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="modal-body"></div>
-    </div>
-  </div>
-
-  <script>
-  // Redirect from root to index.html if needed
-  if (window.location.pathname === '/' && !window.location.pathname.includes('index.html')) {
-    window.location.href = window.location.origin + '/index.html';
-  }
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-  <script src="js/vanta-init.js"></script>
-  <script src="js/main.js"></script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
 </html>

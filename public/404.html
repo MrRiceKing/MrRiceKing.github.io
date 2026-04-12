@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0;url=./" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages 404 redirect for SPA with HashRouter
+      // Redirects all 404s back to index.html
+      var path = window.location.pathname;
+      var repo = ''; // Set to '/repo-name' if deploying to github.com/user/repo-name
+      window.location.replace(
+        window.location.origin + repo + '/#' + path
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
