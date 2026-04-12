@@ -3,11 +3,11 @@ import { PageWrapper, SectionTitle, OrnamentalCard } from "@/components/shared";
 import { Github, Twitter, Youtube, MessageCircle, DollarSign, Mail, ExternalLink, Twitch } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", url: "#", color: "hover:text-foreground" },
-  { icon: Twitter, label: "Twitter / X", url: "#", color: "hover:text-primary" },
-  { icon: Youtube, label: "YouTube", url: "#", color: "hover:text-destructive" },
-  { icon: Twitch, label: "Twitch", url: "#", color: "hover:text-accent" },
-  { icon: Mail, label: "Email", url: "mailto:your@email.com", color: "hover:text-primary" },
+  { icon: Github, label: "GitHub", url: "https://github.com/MrRiceKing", color: "hover:text-foreground" },
+  { icon: Twitter, label: "Steam", url: "https://steamcommunity.com/id/MrRiceKing", color: "hover:text-primary" },
+  { icon: Youtube, label: "Snapchat", url: "https://www.snapchat.com/@mrriceking-aj", color: "hover:text-destructive" },
+  { icon: Twitch, label: "Twitch", url: "https://www.discord.gg/59fvxyjfKD", color: "hover:text-accent" },
+  { icon: Mail, label: "Email", url: "mailto:riceking911@gmail.com", color: "hover:text-primary" },
 ];
 
 const Contact = () => {
@@ -64,7 +64,7 @@ const Contact = () => {
               discuss games, and connect with like-minded adventurers.
             </p>
             <a
-              href="#"
+              href="https://www.discord.gg/59fvxyjfKD"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary/20 text-primary border border-primary/30 rounded-lg px-6 py-2.5 font-heading text-sm tracking-wider transition-all duration-300 hover:bg-primary/30 hover:box-glow-hover"
@@ -83,7 +83,7 @@ const Contact = () => {
               any contribution is deeply appreciated.
             </p>
             <a
-              href="#"
+              href="https://www.paypal.me/TheRiceKingdom"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gold/20 text-gold border border-gold/30 rounded-lg px-6 py-2.5 font-heading text-sm tracking-wider transition-all duration-300 hover:bg-gold/30 hover:shadow-[0_0_20px_hsl(45,80%,60%,0.2)]"
