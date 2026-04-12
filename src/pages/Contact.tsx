@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { PageWrapper, SectionTitle, OrnamentalCard } from "@/components/shared";
-import { Github, shield, camera, MessageCircle, DollarSign, Mail, ExternalLink, palette } from "lucide-react";
+import { Github, LucideGamepad2, LucideCamera, MessageCircle, DollarSign, Mail, ExternalLink, LucidePalette } from "lucide-react";
 
 const socialLinks = [
   { icon: Github, label: "GitHub", url: "https://github.com/MrRiceKing", color: "hover:text-foreground" },
-  { icon: shield, label: "Steam", url: "https://steamcommunity.com/id/MrRiceKing", color: "hover:text-primary" },
-  { icon: camera, label: "Snapchat", url: "https://www.snapchat.com/@mrriceking-aj", color: "hover:text-destructive" },
-  { icon: palette, label: "Artstation", url: "https://www.artstation.com/riceking", color: "hover:text-accent" },
+  { icon: LucideGamepad2, label: "Steam", url: "https://steamcommunity.com/id/MrRiceKing", color: "hover:text-primary" },
+  { icon: LucideCamera, label: "Snapchat", url: "https://www.snapchat.com/@mrriceking-aj", color: "hover:text-destructive" },
+  { icon: LucidePalette, label: "Artstation", url: "https://www.artstation.com/riceking", color: "hover:text-accent" },
   { icon: Mail, label: "Email", url: "mailto:riceking911@gmail.com", color: "hover:text-primary" },
 ];
 
