@@ -93,33 +93,7 @@ const Contact = () => {
             </a>
           </OrnamentalCard>
 
-          {/* Contact Form placeholder */}
-          <OrnamentalCard hover={false}>
-            <h3 className="font-heading text-sm text-foreground mb-3 text-glow-purple">Send a Message</h3>
-            <div className="space-y-3">
-              <input
-                type="text"
-                placeholder="Your name"
-                className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:box-glow transition-all"
-              />
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:box-glow transition-all"
-              />
-              <textarea
-                placeholder="Your message..."
-                rows={3}
-                className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:box-glow transition-all resize-none"
-              />
-              <button className="w-full bg-primary/20 text-primary border border-primary/30 rounded-lg px-4 py-2.5 font-heading text-xs tracking-widest uppercase transition-all duration-300 hover:bg-primary/30 hover:box-glow-hover">
-                Send Message
-              </button>
-            </div>
-            <p className="text-[10px] text-muted-foreground/40 mt-2 font-body text-center">
-              * Contact form is decorative — connect a backend to enable
-            </p>
-          </OrnamentalCard>
+
         </motion.div>
       </div>
     </PageWrapper>
