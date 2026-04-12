@@ -6,7 +6,7 @@ const socialLinks = [
   { icon: Github, label: "GitHub", url: "https://github.com/MrRiceKing", color: "hover:text-foreground" },
   { icon: Twitter, label: "Steam", url: "https://steamcommunity.com/id/MrRiceKing", color: "hover:text-primary" },
   { icon: Youtube, label: "Snapchat", url: "https://www.snapchat.com/@mrriceking-aj", color: "hover:text-destructive" },
-  { icon: Twitch, label: "Twitch", url: "https://www.discord.gg/59fvxyjfKD", color: "hover:text-accent" },
+  { icon: Twitch, label: "Artstation", url: "https://www.artstation.com/riceking", color: "hover:text-accent" },
   { icon: Mail, label: "Email", url: "mailto:riceking911@gmail.com", color: "hover:text-primary" },
 ];
 
