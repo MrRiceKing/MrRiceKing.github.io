@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { PageWrapper, StaggerContainer, staggerItemVariants } from "@/components/shared";
 import { OrnamentalDividerSVG, AnimatedFrame, GlowOrb } from "@/components/Ornaments";
 import { Github, MessageCircle, ExternalLink } from "lucide-react";
+import avatarImg from "@/assets/avatar.png";
 
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "#" },
@@ -107,18 +108,32 @@ const Index = () => {
         className="mt-16"
       >
         <AnimatedFrame className="ornamental-border rounded-xl p-8 md:p-12 max-w-3xl mx-auto">
-          <h2 className="font-heading text-2xl text-foreground text-glow-purple mb-4">About Me</h2>
-          <OrnamentalDividerSVG width={160} className="mb-6" />
+          <h2 className="font-heading text-2xl text-foreground text-glow-purple mb-6">About Me</h2>
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <motion.div
-              className="w-28 h-28 rounded-full ornamental-border flex items-center justify-center shrink-0 relative"
-              whileHover={{ rotate: 10, scale: 1.05 }}
+              className="w-36 h-36 rounded-full flex items-center justify-center shrink-0 relative"
+              whileHover={{ scale: 1.08 }}
             >
-              <span className="text-4xl">🧙</span>
-              <div
-                className="absolute inset-0 rounded-full animate-pulse-glow"
+              {/* Rotating glow ring */}
+              <motion.div
+                className="absolute inset-[-6px] rounded-full"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 style={{
-                  boxShadow: "0 0 20px hsla(174, 80%, 50%, 0.15), inset 0 0 20px hsla(280, 80%, 60%, 0.08)",
+                  background: "conic-gradient(from 0deg, hsla(174, 80%, 50%, 0.4), hsla(280, 80%, 60%, 0.3), hsla(174, 80%, 50%, 0.05), hsla(280, 80%, 60%, 0.3), hsla(174, 80%, 50%, 0.4))",
+                }}
+              />
+              {/* Inner dark ring to create gap */}
+              <div className="absolute inset-[-3px] rounded-full bg-background" />
+              {/* Avatar image */}
+              <div className="w-full h-full rounded-full ornamental-border overflow-hidden relative z-10">
+                <img src={avatarImg} alt="Avatar" className="w-full h-full object-contain p-2" />
+              </div>
+              {/* Soft ambient glow */}
+              <div
+                className="absolute inset-0 rounded-full pointer-events-none"
+                style={{
+                  boxShadow: "0 0 30px hsla(174, 80%, 50%, 0.2), 0 0 60px hsla(280, 80%, 60%, 0.1)",
                 }}
               />
             </motion.div>

@@ -46,13 +46,16 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r border-border/50">
       <SidebarHeader className="p-4">
         {!collapsed && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="font-heading text-lg text-primary text-glow tracking-wider"
-          >
-            ✦ Portfolio ✦
-          </motion.div>
+          <div className="flex flex-col items-center gap-2">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="font-heading text-lg text-primary text-glow tracking-wider text-center"
+            >
+              ✦ Portfolio ✦
+            </motion.div>
+            <OrnamentalDividerSVG width={120} />
+          </div>
         )}
         {collapsed && (
           <motion.div
@@ -64,12 +67,6 @@ export function AppSidebar() {
           </motion.div>
         )}
       </SidebarHeader>
-
-      {!collapsed && (
-        <div className="px-4 -mt-1">
-          <OrnamentalDividerSVG width={150} />
-        </div>
-      )}
 
       <SidebarContent className="mt-2">
         <SidebarGroup>

@@ -1,1 +1,3 @@
-The beginnings of a legendary portfolio site.
+# Welcome to your Lovable project
+
+TODO: Document your project here

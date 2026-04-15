@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { PageWrapper, SectionTitle, OrnamentalCard } from "@/components/shared";
-import { Github, LucideGamepad2, LucideCamera, MessageCircle, DollarSign, Mail, ExternalLink, LucidePalette } from "lucide-react";
+import { Github, MessageCircle, DollarSign, Mail, ExternalLink, Gamepad2, Ghost, Brush } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", url: "https://github.com/MrRiceKing", color: "hover:text-foreground" },
-  { icon: LucideGamepad2, label: "Steam", url: "https://steamcommunity.com/id/MrRiceKing", color: "hover:text-primary" },
-  { icon: LucideCamera, label: "Snapchat", url: "https://www.snapchat.com/@mrriceking-aj", color: "hover:text-destructive" },
-  { icon: LucidePalette, label: "Artstation", url: "https://www.artstation.com/riceking", color: "hover:text-accent" },
-  { icon: Mail, label: "Email", url: "mailto:riceking911@gmail.com", color: "hover:text-primary" },
+  { icon: Github, label: "GitHub", url: "#", color: "hover:text-foreground" },
+  { icon: Gamepad2, label: "Steam", url: "#", color: "hover:text-primary" },
+  { icon: Ghost, label: "Snapchat", url: "#", color: "hover:text-accent" },
+  { icon: Brush, label: "ArtStation", url: "#", color: "hover:text-destructive" },
+  { icon: Mail, label: "Email", url: "mailto:your@email.com", color: "hover:text-primary" },
 ];
 
 const Contact = () => {
@@ -64,7 +64,7 @@ const Contact = () => {
               discuss games, and connect with like-minded adventurers.
             </p>
             <a
-              href="https://www.discord.gg/59fvxyjfKD"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary/20 text-primary border border-primary/30 rounded-lg px-6 py-2.5 font-heading text-sm tracking-wider transition-all duration-300 hover:bg-primary/30 hover:box-glow-hover"
@@ -83,7 +83,7 @@ const Contact = () => {
               any contribution is deeply appreciated.
             </p>
             <a
-              href="https://www.paypal.me/TheRiceKingdom"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gold/20 text-gold border border-gold/30 rounded-lg px-6 py-2.5 font-heading text-sm tracking-wider transition-all duration-300 hover:bg-gold/30 hover:shadow-[0_0_20px_hsl(45,80%,60%,0.2)]"
@@ -93,7 +93,33 @@ const Contact = () => {
             </a>
           </OrnamentalCard>
 
-
+          {/* Contact Form placeholder */}
+          <OrnamentalCard hover={false}>
+            <h3 className="font-heading text-sm text-foreground mb-3 text-glow-purple">Send a Message</h3>
+            <div className="space-y-3">
+              <input
+                type="text"
+                placeholder="Your name"
+                className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:box-glow transition-all"
+              />
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:box-glow transition-all"
+              />
+              <textarea
+                placeholder="Your message..."
+                rows={3}
+                className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:box-glow transition-all resize-none"
+              />
+              <button className="w-full bg-primary/20 text-primary border border-primary/30 rounded-lg px-4 py-2.5 font-heading text-xs tracking-widest uppercase transition-all duration-300 hover:bg-primary/30 hover:box-glow-hover">
+                Send Message
+              </button>
+            </div>
+            <p className="text-[10px] text-muted-foreground/40 mt-2 font-body text-center">
+              * Contact form is decorative — connect a backend to enable
+            </p>
+          </OrnamentalCard>
         </motion.div>
       </div>
     </PageWrapper>
