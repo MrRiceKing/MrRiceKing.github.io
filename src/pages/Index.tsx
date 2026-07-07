@@ -5,9 +5,9 @@ import { Github, MessageCircle, ExternalLink } from "lucide-react";
 import avatarImg from "@/assets/avatar.png";
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: MessageCircle, label: "Discord", href: "#" },
-  { icon: ExternalLink, label: "Portfolio", href: "#" },
+  { icon: Github, label: "GitHub", href: "https://github.com/MrRiceKing" },
+  { icon: MessageCircle, label: "Discord", href: "https://discord.gg/59fvxyjfKD" },
+  { icon: ExternalLink, label: "Portfolio", href: "https://www.artstation.com/riceking" },
 ];
 
 const Index = () => {
@@ -40,7 +40,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Your Name
+              Mr. RiceKing
             </motion.span>
           </h1>
 

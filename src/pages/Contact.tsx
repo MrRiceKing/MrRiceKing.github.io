@@ -3,11 +3,11 @@ import { PageWrapper, SectionTitle, OrnamentalCard } from "@/components/shared";
 import { Github, MessageCircle, DollarSign, Mail, ExternalLink, Gamepad2, Ghost, Brush } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", url: "#", color: "hover:text-foreground" },
-  { icon: Gamepad2, label: "Steam", url: "#", color: "hover:text-primary" },
+  { icon: Github, label: "GitHub", url: "https://github.com/MrRiceKing", color: "hover:text-foreground" },
+  { icon: Gamepad2, label: "Steam", url: "https://steamcommunity.com/id/MrRiceKing/", color: "hover:text-primary" },
   { icon: Ghost, label: "Snapchat", url: "#", color: "hover:text-accent" },
-  { icon: Brush, label: "ArtStation", url: "#", color: "hover:text-destructive" },
-  { icon: Mail, label: "Email", url: "mailto:your@email.com", color: "hover:text-primary" },
+  { icon: Brush, label: "ArtStation", url: "https://www.artstation.com/riceking", color: "hover:text-destructive" },
+  { icon: Mail, label: "Email", url: "mailto:riceking921@email.com", color: "hover:text-primary" },
 ];
 
 const Contact = () => {
