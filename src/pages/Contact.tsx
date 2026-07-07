@@ -7,7 +7,7 @@ const socialLinks = [
   { icon: Gamepad2, label: "Steam", url: "https://steamcommunity.com/id/MrRiceKing/", color: "hover:text-primary" },
   { icon: Ghost, label: "Snapchat", url: "#", color: "hover:text-accent" },
   { icon: Brush, label: "ArtStation", url: "https://www.artstation.com/riceking", color: "hover:text-destructive" },
-  { icon: Mail, label: "Email", url: "mailto:riceking921@email.com", color: "hover:text-primary" },
+  { icon: Mail, label: "Email", url: "mailto:riceking921@gmail.com", color: "hover:text-primary" },
 ];
 
 const Contact = () => {
@@ -64,7 +64,7 @@ const Contact = () => {
               discuss games, and connect with like-minded adventurers.
             </p>
             <a
-              href="#"
+              href="https://discord.gg/59fvxyjfKD"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary/20 text-primary border border-primary/30 rounded-lg px-6 py-2.5 font-heading text-sm tracking-wider transition-all duration-300 hover:bg-primary/30 hover:box-glow-hover"
@@ -83,7 +83,7 @@ const Contact = () => {
               any contribution is deeply appreciated.
             </p>
             <a
-              href="#"
+              href="https://www.paypal.me/TheRiceKingdom"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gold/20 text-gold border border-gold/30 rounded-lg px-6 py-2.5 font-heading text-sm tracking-wider transition-all duration-300 hover:bg-gold/30 hover:shadow-[0_0_20px_hsl(45,80%,60%,0.2)]"
@@ -93,7 +93,7 @@ const Contact = () => {
             </a>
           </OrnamentalCard>
 
-          {/* Contact Form placeholder */}
+          {/* Contact Form placeholder 
           <OrnamentalCard hover={false}>
             <h3 className="font-heading text-sm text-foreground mb-3 text-glow-purple">Send a Message</h3>
             <div className="space-y-3">
@@ -119,7 +119,7 @@ const Contact = () => {
             <p className="text-[10px] text-muted-foreground/40 mt-2 font-body text-center">
               * This is a placeholder form. Functionality will be implemented in the future.
             </p>
-          </OrnamentalCard>
+          </OrnamentalCard>*/}
         </motion.div>
       </div>
     </PageWrapper>
