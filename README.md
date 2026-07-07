@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Welcome to TheRiceKingdom
 
-TODO: Document your project here
+Site still being built, check back later on!
