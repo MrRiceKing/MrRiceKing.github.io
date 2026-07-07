@@ -117,7 +117,7 @@ const Contact = () => {
               </button>
             </div>
             <p className="text-[10px] text-muted-foreground/40 mt-2 font-body text-center">
-              * Contact form is decorative — connect a backend to enable
+              * This is a placeholder form. Functionality will be implemented in the future.
             </p>
           </OrnamentalCard>
         </motion.div>
